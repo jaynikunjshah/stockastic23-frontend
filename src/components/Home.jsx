@@ -2,8 +2,10 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>
-      
+    <div
+      className="bg-black"
+      >
+      <h1>Hello World</h1>
     </div>
   )
 }
