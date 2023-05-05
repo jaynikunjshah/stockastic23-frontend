@@ -49,16 +49,16 @@ const Footer = () => {
           {/* Social Media Handles */}
           <div className="grid grid-cols-4 mt-8 gap-3">
             <a href="mailto:dmc@vit.ac.in">
-              <img src="Kamil-Icons/gmail.svg" alt="Gmail.png" />
+              <img src="gmail.svg" alt="Gmail.png" />
             </a>
             <a href="https://twitter.com/DM_VIT">
-              <img src="Kamil-Icons/twitter.svg" alt="Twitter.png" />
+              <img src="twitter.svg" alt="Twitter.png" />
             </a>
             <a href="https://www.linkedin.com/company/dream-merchants-vit/">
-              <img src="Kamil-Icons/linkedin.svg" alt="LinkedIN.png" />
+              <img src="linkedin.svg" alt="LinkedIN.png" />
             </a>
             <a href="https://www.instagram.com/dreammerchantsvit/">
-              <img src="Kamil-Icons/instagram.svg" alt="Instagram.png" />
+              <img src="instagram.svg" alt="Instagram.png" />
             </a>
           </div>
         </div>
