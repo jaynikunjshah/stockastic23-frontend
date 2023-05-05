@@ -61,7 +61,7 @@ function FAQs() {
         </div>
       </div>
       {/* FAQ image */}
-      <img className="hidden lg:inline-block col-span-4 mt-[80px] ml-[230px]" src="Kamil-Icons/faq.svg" alt="FAQ.png" />
+      <img className="hidden lg:inline-block col-span-4 mt-[80px] ml-[230px]" src="faq.svg" alt="FAQ.png" />
     </div>
   )
 }
