@@ -1,8 +1,8 @@
 details > .questions::after {
     float: right;
-    content: url("../Kamil-Icons/down-arrow.svg");
+    content: url("../down-arrow.svg");
   }
   
   details[open] > .questions::after {
-    content: url("../Kamil-Icons/up-arrow.svg");
+    content: url("../up-arrow.svg");
   }
