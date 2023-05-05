@@ -11,14 +11,20 @@ module.exports = {
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
+        "blue_shade": "#003F63",
+        "sand": "#FFF2CE"
       },
       fontFamily: {
         'raleway': ['Raleway', 'sans-serif']
       },
       screens: {
         xs: "450px",
+        med: {'max':'1000px'},
+        tall: { 'raw': '(max-height: 1200px)'},
       },
-
+      fontFamily: {
+        Lora: ['Lora', 'serif'],
+      }
     },
   },
   plugins: [],
