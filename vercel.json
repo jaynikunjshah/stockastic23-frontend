@@ -1,6 +1,6 @@
 {
     "redirects": [
-      { "source": "/cta", "destination": "/CTA" },
+      { "source": "/cta", "destination": "CTA" },
       { "source": "/sponsor", "destination": "/"},
       {
         "source": "/view-source",
