@@ -7,7 +7,7 @@ const Footer = () => {
         {/* Left */}
         <div className="stock mx-auto lg:my-[60px] mb-[60px] mt-[20px]">
           <a href="/">
-            <img className="lg:h-64 h-40 mb-2" src="Kamil-Icons/logo.svg" alt="logo.svg" />
+            <img className="lg:h-64 h-40 mb-2" src="logo.svg" alt="logo.svg" />
             <div className="text-center text-[1.2rem] lg:text-[1.7rem] text-[#5DBEC7] tracking-[2px]">
               STOCKASTICS
             </div>
