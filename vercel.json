@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      { "source": "/cta", "destination": "src/components/CTA.jsx" },
+      { "source": "/sponsor", "destination": "src/components/Sponsors.jsx"},
+      {
+        "source": "/view-source",
+        "destination": "https://github.com/vercel/vercel"
+      }
+    ]
+  }
