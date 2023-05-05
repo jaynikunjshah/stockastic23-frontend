@@ -43,7 +43,7 @@ function Home() {
         <div className="md:flex">
           <div className="p-8 md:w-1/2 mr-0">
             <div className="pl-6 text-9xl tracking-wider font-extrabold text-left align-center text-[#003f63]">
-              Dream. Build. <br />
+              Dream. Build. <br/>
               Inspire.
             </div>
             <p className="mt-2 text-[#003f63] text-center text-2xl px-2 py-8">
