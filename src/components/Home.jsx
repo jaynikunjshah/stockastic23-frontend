@@ -3,8 +3,8 @@ import React from "react";
 function Home() {
   return (
     <div>
-      <nav className="flex flex-wrap lg:w-full w-full fixed backdrop-filter backdrop-blur-lg bg-opacity-100 top-0 left-0 right-0 items-center justify-between p-3 bg-[#003f63] text-white max-w-screen">
-        <div className="lg:flex items-center mr-4">
+      <nav className="flex flex-wrap lg:w-full w-full backdrop-filter backdrop-blur-lg bg-opacity-100 top-0 left-0 right-0 items-center justify-between p-3 bg-[#003f63] text-white max-w-screen xsnavadj:content-center xsnavadj:justify-center">
+        <div className="lg:flex items-center mr-4 xsnavadj:mr-0">
             <img src="stockastic_logo.svg" alt="logo" className="mx-auto h-16" />
           <div className="text-3xl font-bold ml-2 tracking-[3px]">STOCKASTIC</div>
         </div>
@@ -28,7 +28,7 @@ function Home() {
             >
               Contact Us
             </a>
-            <div>
+            <div className="xsnavadj:mr-[0.5rem] xsnavadj:mt-4">
               <button className="px-4 py-2 border transition duration-275 ease-in-out transform hover:scale-125 border-white text-[#003f63] font-semibold rounded-full ml-4 bg-[#fff2ce] hover:bg-[#003f63] hover:text-[#fff2ce] hover:shadow-md inline">
                 REGISTER
               </button>
@@ -39,29 +39,29 @@ function Home() {
           </div>
         </div>
       </nav>
-      <div className="w-full pt-24 mx-auto bg-transparent overflow-visible md:w-full">
-        <div className="md:flex">
-          <div className="p-8 md:w-1/2 mr-0">
-            <div className="pl-6 text-9xl tracking-wider font-extrabold text-left align-center text-[#003f63]">
-              Dream. Build. <br/>
+      <div className="pt-2 mx-auto bg-transparent">
+        <div className="md:flex flex justify-between flex-row large:flex large:flex-col large:items-center">
+          <div className="p-8 md:w-1/2 mr-0 w-2/5 flex flex-col large:w-full">
+            <div className="text-8xl tracking-wider font-extrabold text-left text-[#003f63] xsmax:text-6xl large:flex large:justify-center">
+              Dream. <br /> Build. <br />
               Inspire.
             </div>
-            <p className="mt-2 text-[#003f63] text-center text-2xl px-2 py-8">
+            <p className="mt-2 text-[#003f63] text-2xl px-2 py-8">
               A stock market simulator event is a virtual platform for
               participants to practice investing in stocks without using real
               money.
             </p>
           </div>
-          <div className="md:shrink-0 md:w-1/2">
+          <div className="md:shrink-0 md:w-1/2 w-3/5 flex align-center large:w-full">
             <img
-              className="h-auto w-auto object-cover md:h-auto md:w-auto mx-auto align-middle"
+              className="h-auto w-auto object-cover md:h-auto md:w-auto mx-auto"
               src="./Hero-Image.svg"
               alt="Hero Image"
             />
           </div>
         </div>
       </div>
-      <div className="md:order-3 md:w-1/2 md:mx-auto my-8 text-center">
+      <div className="md:order-3 md:w-1/2 md:mx-auto my-4 text-center mt-0">
         <button className="border bg-[#003f63] rounded-full text-2xl px-9 py-6 shadow-2xl hover:shadow-inner border-[#003f63] text-white font-semibold ml-4 hover:bg-[#eef7fe] hover:text-[#003f63] transition duration-275 ease-in-out transform hover:scale-110">
           REGISTER NOW
         </button>

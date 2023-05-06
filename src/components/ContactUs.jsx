@@ -9,7 +9,7 @@ const Footer = () => {
           <a href="/">
             <img className="lg:h-64 h-40 mb-2" src="logo.svg" alt="logo.svg" />
             <div className="text-center text-[1.2rem] lg:text-[1.7rem] text-[#5DBEC7] tracking-[2px]">
-              STOCKASTICS
+              STOCKASTIC
             </div>
           </a>
         </div>
@@ -48,7 +48,7 @@ const Footer = () => {
           </a>
           {/* Social Media Handles */}
           <div className="grid grid-cols-4 mt-8 gap-3">
-            <a href="mailto:dmc@vit.ac.in">
+            <a href="mailto:dreammerchantsvit@gmail.com">
               <img src="gmail.svg" alt="Gmail.png" />
             </a>
             <a href="https://twitter.com/DM_VIT">
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Copyright */}
-      <div className="my-5 text-black font-bold text-[1.3rem] text-center">
+      <div className="text-black font-bold text-[1.3rem] text-center mt-1 mb-2">
         <span className="align-middle text-[2.4rem]">©</span><span className="align-middle">Dream Merchants VIT-2023 - All Rights Reserved.</span>
       </div>
     </div>

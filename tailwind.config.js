@@ -21,6 +21,9 @@ module.exports = {
         xs: "450px",
         med: {'max':'1000px'},
         tall: { 'raw': '(max-height: 1200px)'},
+        large: {'max':'1410px'},
+        xsmax : {'max' : '450px'},
+        xsnavadj: {'max' : '475px'}
       },
       fontFamily: {
         Lora: ['Lora', 'serif'],
