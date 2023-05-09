@@ -1,0 +1,4 @@
+.event-gradient{
+  background: rgb(194,121,42);
+background: linear-gradient(45deg, rgba(194,121,42,1) 0%, rgba(0,0,0,1) 63%);
+}
