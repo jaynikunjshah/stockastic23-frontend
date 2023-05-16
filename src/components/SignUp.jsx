@@ -5,7 +5,7 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .required("Email ID is a required field")
     .matches(
-      "^[A-Za-z]+[.][A-Za-z]+202[0-4]{1}@vitstudent.ac.in$",
+      "^[a-z]+[.][a-z]+202[0-4]{1}[0-9]?@vitstudent.ac.in$",
       "Enter VIT Email ID only"
     ),
   password: Yup.string()
