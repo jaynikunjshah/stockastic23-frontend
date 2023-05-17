@@ -31,7 +31,9 @@ function SignIn() {
           handleSubmit,
         }) => (
           <div className="login grid md:grid-cols-2 gap-6 min-w-[60%] bg-[#0F0F0F]">
-            <div className="bg-[#7353BA] hidden md:block m-4 rounded-e-2xl"></div>
+            <div className="bg-[#7353BA] hidden md:block m-4 rounded-e-2xl">
+              <img className="mx-auto w-96" src="man_with_pc.svg" alt="" />
+            </div>
 
             <div className="form w-100 text-center m-4">
               <a href="#" className="flex justify-end"><img className="w-12" src="logo.svg" alt="" /><div className="my-auto text-[#5FBDC8]">Stockastics</div></a>
