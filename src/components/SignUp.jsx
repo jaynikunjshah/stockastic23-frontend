@@ -1,25 +1,25 @@
+import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-const schema = Yup.object().shape({
-  email: Yup.string()
-    .required("Email ID is a required field")
-    .matches(
-      "^[a-z]+[.][a-z]+202[0-4]{1}[0-9]?@vitstudent.ac.in$",
-      "Enter VIT Email ID only"
-    ),
-  password: Yup.string()
-    .required("Password is a required field")
-    .min(8, "Password must be at least 8 characters"),
-  name: Yup.string()
-    .required("Name is a required field")
-    .matches("^[a-zA-Z]+([ ][a-zA-Z]+)*$", "Invalid name format"),
-  registration_number: Yup.string()
-    .required("Register Number is a required field")
-    .matches("^2[0-4]B[A-Z]{2}[0-4][0-9]{3}$", "Invalid Register Number"),
-});
-
 function SignUp() {
+  const schema = Yup.object().shape({
+    email: Yup.string()
+      .required("Email ID is a required field")
+      .matches(
+        "^[a-z]+[.][a-z]+202[0-4]{1}[0-9]?@vitstudent.ac.in$",
+        "Enter VIT Email ID only"
+      ),
+    password: Yup.string()
+      .required("Password is a required field")
+      .min(8, "Password must be at least 8 characters"),
+    name: Yup.string()
+      .required("Name is a required field")
+      .matches("^[a-zA-Z]+([ ][a-zA-Z]+)*$", "Invalid name format"),
+    registration_number: Yup.string()
+      .required("Register Number is a required field")
+      .matches("^2[0-4]B[A-Z]{2}[0-4][0-9]{3}$", "Invalid Register Number"),
+  });
   return (
     <div className="items-center tracking-[1px] text-[#fff] flex h-screen justify-center">
       <Formik

@@ -1,17 +1,17 @@
+import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-const schema = Yup.object().shape({
-  email: Yup.string()
-    .required("VIT Email ID is a required field")
-    .matches("[A-Za-z]+[.][A-Za-z]+202[0-4]{1}@vitstudent.ac.in", 'Enter VIT Email ID only')
-    .email("Invalid email format"),
-  password: Yup.string()
-    .required("Password is a required field")
-    .min(8, "Password must be at least 8 characters"),
-});
-
 function SignIn() {
+  const schema = Yup.object().shape({
+    email: Yup.string()
+      .required("VIT Email ID is a required field")
+      .matches("[A-Za-z]+[.][A-Za-z]+202[0-4]{1}@vitstudent.ac.in", 'Enter VIT Email ID only')
+      .email("Invalid email format"),
+    password: Yup.string()
+      .required("Password is a required field")
+      .min(8, "Password must be at least 8 characters"),
+  });  
   return (
     <div className="items-center tracking-[1px] text-[#fff] flex h-screen justify-center">
       <Formik
