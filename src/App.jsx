@@ -6,6 +6,8 @@ import CTA from '../src/components/CTA'
 import Sponsors from '../src/components/Sponsors'
 import FAQs from '../src/components/FAQs'
 import ContactUs from '../src/components/ContactUs'
+import SignIn from '../src/components/SignIn'
+import SignUp from '../src/components/SignUp'
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='about' element={<AboutUs />}></Route>
+        <Route path='signin' element={<SignIn />}></Route>
+        <Route path='signup' element={<SignUp />}></Route>
         <Route path='timeline' element={<Timeline />}></Route>
         <Route path='cta' element={<CTA />}></Route>
         <Route path='sponsors' element={<Sponsors />}></Route>
