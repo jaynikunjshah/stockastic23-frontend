@@ -20,9 +20,8 @@ function SignUp() {
 			.required("Register Number is a required field")
 			.matches("^2[0-4]B[A-Z]{2}[0-4][0-9]{3}$", "Invalid Register Number"),
 	});
-  
 	return (
-		<div className="items-center tracking-[1px] text-[#fff] flex h-screen justify-center bg-[#0F0F0F]">
+		<div className="items-center tracking-[1px] text-[#fff] flex  justify-center bg-[#0F0F0F]">
 			<Formik
 				validationSchema={schema}
 				initialValues={{ email: "", password: "" }}
@@ -47,7 +46,7 @@ function SignUp() {
 							</a>
 
 							<form noValidate onSubmit={handleSubmit}>
-								<span className="block font-[500] text-2xl mt-9 mb-3">
+								<span className="block font-[500] text-2xl mt-[60px] mb-3">
 									CREATE AN ACCOUNT
 								</span>
 								<span className="block text-[#858585]">Sign up now...</span>
@@ -58,7 +57,7 @@ function SignUp() {
 									onBlur={handleBlur}
 									value={values.name}
 									placeholder="Enter Name"
-									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 									id="name"
 								/>
 								<p className="error mb-[10px] text-left text-red-500 text-[10px]">
@@ -71,7 +70,7 @@ function SignUp() {
 									onBlur={handleBlur}
 									value={values.email}
 									placeholder="Enter VIT Email ID"
-									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 									id="email"
 								/>
 								<p className="error mb-[10px] text-left text-red-500 text-[10px]">
@@ -84,7 +83,7 @@ function SignUp() {
 									onBlur={handleBlur}
 									value={values.registration_number}
 									placeholder="Enter Registration Number"
-									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 									id="registration_number"
 								/>
 								<p className="error mb-[10px] text-left text-red-500 text-[10px]">
@@ -99,33 +98,33 @@ function SignUp() {
 									onBlur={handleBlur}
 									value={values.password}
 									placeholder="Enter password"
-									className="form-control p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+									className="form-control p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 								/>
 								<p className="error mb-[40px] text-left text-red-500 text-[10px]">
 									{errors.password && touched.password && errors.password}
 								</p>
 								<button
 									type="submit"
-									className="bg-[#7353BA] w-[100%] px-4 py-3 mt-5 rounded-xl mb-6 hover:opacity-75"
+									className="bg-[#7353BA]  mx-[10%] w-[80%] px-4 py-3 mt-4 rounded-xl mb-6 hover:opacity-75"
 								>
 									Create Account
 								</button>
 								<a href="#">
 									<button
 										type="button"
-										className="bg-[#1E1B1E] w-[100%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
+										className="bg-[#1E1B1E]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
 									>
 										Sign In
 									</button>
 								</a>
 							</form>
-							<a href="mailto:DM@gmail.com" className="flex absolute  bottom-4">
+							<a href="mailto:DM@gmail.com" className="flex mt-[4.3%] bottom-4">
 								<img src="gmail-grey.svg" alt="gmail" />
 								<div className="ms-2 my-auto">DM@gmail.com</div>
 							</a>
 						</div>
 						<div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl ">
-							<img className="mx-auto w-96" src="SignUpPic.svg" alt="" />
+							<img className="mx-auto" src="SignUpPic.svg" alt="" />
 						</div>
 					</div>
 				)}
