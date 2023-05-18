@@ -13,7 +13,7 @@ function SignIn() {
       .min(8, "Password must be at least 8 characters"),
   });  
   return (
-    <div className="items-center tracking-[1px] text-[#fff] flex h-screen justify-center">
+    <div className="items-center tracking-[1px] text-[#fff] flex h-screen justify-center bg-[#0F0F0F]">
       <Formik
         validationSchema={schema}
         initialValues={{ email: "", password: "" }}
@@ -30,16 +30,16 @@ function SignIn() {
           handleBlur,
           handleSubmit,
         }) => (
-          <div className="login grid md:grid-cols-2 gap-6 min-w-[60%] bg-[#0F0F0F]">
-            <div className="bg-[#7353BA] hidden md:block m-4 rounded-e-2xl">
-              <img className="mx-auto w-96" src="man_with_pc.svg" alt="" />
+          <div className="login grid md:grid-cols-2 w-[100%] h-[100%]">
+            <div className="bg-[#7353BA] hidden md:flex m-4 rounded-s-2xl">
+              <img className="mx-auto" src="man_with_pc.svg" alt="Sign In" />
             </div>
 
-            <div className="form w-100 text-center m-4">
+            <div className="form w-100 text-center justify-between m-4">
               <a href="#" className="flex justify-end"><img className="w-12" src="logo.svg" alt="" /><div className="my-auto text-[#5FBDC8]">Stockastics</div></a>
 
               <form noValidate onSubmit={handleSubmit}>
-                <span className="block font-[1000] text-2xl mt-9 mb-3">Sign In</span>
+                <span className="block font-[1000] text-2xl mt-[17%] mb-3">Sign In</span>
                 <span className="block light">Welcome to Stockastics</span>
                 <input
                   type="email"
@@ -48,7 +48,7 @@ function SignIn() {
                   onBlur={handleBlur}
                   value={values.email}
                   placeholder="Enter VIT Email ID"
-                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+                  className="form-control inp_text p-[10px] text-[14px] rounded-xl mt-[50px] mb-[15px] bg-[#1E1B1E] mx-[10%] w-[80%]"
                   id="email"
                 />
                 <p className="error mb-[10px] text-left text-red-500 text-[10px]">
@@ -61,15 +61,15 @@ function SignIn() {
                   onBlur={handleBlur}
                   value={values.password}
                   placeholder="Enter password"
-                  className="form-control p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+                  className="form-control p-[10px] text-[14px] rounded-xl mb-[50px] bg-[#1E1B1E] mx-[10%] w-[80%]"
                 />
                 <p className="error mb-[10px] text-left text-red-500 text-[10px]">
                   {errors.password && touched.password && errors.password}
                 </p>
-                <button type="submit" className="bg-[#7353BA] w-[100%] px-4 py-3 mt-5 rounded-xl mb-4">Sign In</button>
-                <a href="#"><button type="submit" className="bg-[#1E1B1E] w-[100%] px-4 py-3 rounded-xl mb-[90px]">Create Account</button></a>
+                <button type="submit" className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75">Sign In</button>
+                <a href="#"><button type="submit" className="bg-[#1E1B1E] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 ">Create Account</button></a>
               </form>
-              <a className="flex justify-end">
+              <a className="flex absolute bottom-4 right-4">
                 <img src="gmail-grey.svg" alt="gmail"/>
                 <div className="ms-2 my-auto">DM@gmail.com</div> 
               </a>
@@ -81,4 +81,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignIn
