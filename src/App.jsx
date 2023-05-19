@@ -8,6 +8,7 @@ import FAQs from '../src/components/FAQs'
 import ContactUs from '../src/components/ContactUs'
 import SignIn from '../src/components/SignIn'
 import SignUp from '../src/components/SignUp'
+import VerifyUser from '../src/components/VerifyUser'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='sponsors' element={<Sponsors />}></Route>
         <Route path='faqs' element={<FAQs />}></Route>
         <Route path='contactus' element={<ContactUs />}></Route>
+        <Route path="verifyuser" element={<VerifyUser />}></Route>
       </Routes>
     </>
   )

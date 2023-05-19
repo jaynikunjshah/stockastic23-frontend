@@ -1,8 +1,13 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router";
+import axios from "axios";
 
 function SignUp() {
+
+  const navigate = useNavigate();
+
   const schema = Yup.object().shape({
     email: Yup.string()
       .required("Email ID is a required field")
@@ -13,21 +18,38 @@ function SignUp() {
     password: Yup.string()
       .required("Password is a required field")
       .min(8, "Password must be at least 8 characters"),
-    name: Yup.string()
-      .required("Name is a required field")
-      .matches("^[a-zA-Z]+([ ][a-zA-Z]+)*$", "Invalid name format"),
-    registration_number: Yup.string()
+    passwordConfirm: Yup.string()
+      .required("Password confirm is a required field"),
+    regNo: Yup.string()
       .required("Register Number is a required field")
       .matches("^2[0-4]B[A-Z]{2}[0-4][0-9]{3}$", "Invalid Register Number"),
   });
   return (
-    <div className="items-center tracking-[1px] text-[#fff] flex h-screen justify-center">
+    <div className="items-center tracking-[1px] text-[#fff] flex justify-center bg-[#0F0F0F]">
       <Formik
         validationSchema={schema}
-        initialValues={{ email: "", password: "" }}
-        onSubmit={(values, { resetForm }) => {
-          console.log(JSON.stringify(values));
-          resetForm();
+        initialValues={{ email: "", password: "", passwordConfirm: "",  regNo: ""}}
+        onSubmit={async (values) => {
+          await axios
+            .post(`https://stockastic23-backend.onrender.com/auth/signup`, values)
+            .then((e) => {
+              const status = e.data.status;
+              if (status === "false") {
+                alert(e.data.err);
+              } else {
+                alert("Successful ! Logging in");
+                localStorage.setItem("email", values.email);
+                navigate("/verifyuser");
+              }
+            })
+            .catch((e) => {
+              console.log(e);
+              if (e.message != "Request failed with status code 400") {
+                alert(e.message);
+              } else {
+                alert(e.response.data.err);
+              }
+            });
         }}
       >
         {({
@@ -38,7 +60,7 @@ function SignUp() {
           handleBlur,
           handleSubmit,
         }) => (
-          <div className="login grid md:grid-cols-2 min-w-[60%] bg-[#0F0F0F]">
+          <div className="login grid md:grid-cols-2 w-[100%] h-[100%]">
             <div className="form w-100 text-center m-4">
               <a href="#" className="flex">
                 <img className="w-12" src="logo.svg" alt="" />
@@ -51,45 +73,30 @@ function SignUp() {
                 </span>
                 <span className="block text-[#858585]">Sign up now...</span>
                 <input
-                  type="name"
-                  name="name"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.name}
-                  placeholder="Enter Name"
-                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
-                  id="name"
-                />
-                <p className="error mb-[10px] text-left text-red-500 text-[10px]">
-                  {errors.name && touched.name && errors.name}
-                </p>
-                <input
-                  type="email"
+                  type="text"
                   name="email"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
                   placeholder="Enter VIT Email ID"
-                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
                   id="email"
                 />
                 <p className="error mb-[10px] text-left text-red-500 text-[10px]">
                   {errors.email && touched.email && errors.email}
                 </p>
                 <input
-                  type="registration_number"
-                  name="registration_number"
+                  type="text"
+                  name="regNo"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.registration_number}
+                  value={values.regNo}
                   placeholder="Enter Registration Number"
-                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
-                  id="registration_number"
+                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
+                  id="regNo"
                 />
                 <p className="error mb-[10px] text-left text-red-500 text-[10px]">
-                  {errors.registration_number &&
-                    touched.registration_number &&
-                    errors.registration_number}
+                  {errors.regNo && touched.regNo && errors.regNo}
                 </p>
                 <input
                   type="password"
@@ -97,33 +104,49 @@ function SignUp() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  placeholder="Enter password"
-                  className="form-control p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E] w-[100%]"
+                  placeholder="Enter Password"
+                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
+                  id="password"
                 />
                 <p className="error mb-[10px] text-left text-red-500 text-[10px]">
-                  {errors.password && touched.password && errors.password}
+                  {errors.password &&
+                    touched.password &&
+                    errors.password}
+                </p>
+                <input
+                  type="password"
+                  name="passwordConfirm"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.passwordConfirm}
+                  placeholder="Confirm your password"
+                  className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
+                  id="passwordConfirm"
+                />
+                <p className="error mb-[10px] text-left text-red-500 text-[10px]">
+                  {errors.passwordConfirm && touched.passwordConfirm && errors.passwordConfirm}
                 </p>
                 <button
                   type="submit"
-                  className="bg-[#7353BA] w-[100%] px-4 py-3 mt-5 rounded-xl mb-4"
+                  className="bg-[#7353BA]  mx-[10%] w-[80%] px-4 py-3 mt-4 rounded-xl mb-6 hover:opacity-75"
                 >
                   Create Account
                 </button>
                 <a href="#">
                   <button
-                    type="submit"
-                    className="bg-[#1E1B1E] w-[100%] px-4 py-3 rounded-xl mb-[30px]"
+                    type="button"
+                    className="bg-[#1E1B1E]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
                   >
                     Sign In
                   </button>
                 </a>
               </form>
-              <a href="mailto:DM@gmail.com" className="flex">
+              <a href="mailto:DM@gmail.com" className="flex mt-[4.3%] bottom-4">
                 <img src="gmail-grey.svg" alt="gmail" />
                 <div className="ms-2 my-auto">DM@gmail.com</div>
               </a>
             </div>
-            <div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl "><img className="mx-2 w-96" src="SignUpPic.svg" alt="" /></div>
+            <div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl"><img className="mx-auto" src="SignUpPic.svg" alt="" /></div>
           </div>
         )}
       </Formik>
