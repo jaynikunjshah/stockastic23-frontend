@@ -2,7 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router";
-import axios from "axios";
+import axios from "redaxios";
 
 function SignUp() {
 
