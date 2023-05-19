@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div>
-      <div className="mx-[25px] lg:px-0 px-6 rounded-[20px] grid lg:grid-cols-2 grid-cols-1 bg-[#003F63]">
+      <div className="mx-[25px] lg:px-0 px-6 rounded-[20px] grid lg:grid-cols-2 grid-cols-1 bg-[#7353BA]">
         {/* Left */}
         <div className="stock mx-auto lg:my-[60px] mb-[60px] mt-[20px]">
           <a href="/">
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Copyright */}
-      <div className="text-black font-bold text-[1.3rem] text-center mt-1 mb-2">
+      <div className="text-[#646464] font-bold text-[1.3rem] text-center mt-1 mb-2">
         <span className="align-middle text-[2.4rem]">©</span><span className="align-middle">Dream Merchants VIT-2023 - All Rights Reserved.</span>
       </div>
     </div>
