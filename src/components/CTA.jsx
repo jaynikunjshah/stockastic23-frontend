@@ -3,7 +3,7 @@ import React from 'react'
 function CTA() {
   return (
     <>
-      <div className='bg-[#7353BA] h-screen flex justify-between med:flex med:flex-col-reverse med:items-center tall:h-full'>
+      <div id='cta' className='bg-[#7353BA] h-screen flex justify-between med:flex med:flex-col-reverse med:items-center tall:h-full'>
         <div className='w-4/5 flex justify-between flex-col my-9 med:w-full'>
           <span className='text-5xl flex w-3/5 self-center text-center text-white-100 mt-7 leading-snug font-raleway'>
           " Join us for an unforgettable experience - register now to secure your spot at our event, STOCKASTIC! "

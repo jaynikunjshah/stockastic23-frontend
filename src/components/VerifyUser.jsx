@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router";
@@ -6,6 +6,19 @@ import axios from "redaxios";
 
 function VerifyUser() {
   const navigate = useNavigate();
+
+  const [sucessSnack, setSuccessSnack] = useState(false);
+
+  const showSnackbar = (message, duration) => {
+    var snackbar = document.getElementById("snackbar");
+    snackbar.innerHTML = message;
+    snackbar.classList.add("visible");
+    snackbar.classList.remove("invisible");
+    setTimeout(function () {
+      snackbar.classList.remove("visible");
+      snackbar.classList.add("invisible");
+    }, duration);
+  };
 
   const checkEmail = () => {
     const email = localStorage.getItem("email");
@@ -39,19 +52,21 @@ function VerifyUser() {
                 console.log(e)
               const status = e.data.status;
               if (status === "false") {
-                alert(e.data.err);
+                setSuccessSnack(false);
+                showSnackbar(e.data.err, 1500);
               } else {
-                alert("Successful ! Logging in");
-                navigate("/");
+                setSuccessSnack(true);
+                showSnackbar("Account Successfully Created !", 1500);
+                setTimeout(() => {
+                  localStorage.clear();
+                  navigate("/");
+                }, 2000);
               }
             })
             .catch((e) => {
               console.log(e);
-              if (e.message != "Request failed with status code 400") {
-                alert(e.message);
-              } else {
-                alert(e.response.data.err);
-              }
+              setSuccessSnack(false);
+              showSnackbar(e.message, 1500);
             });
         }}
       >
@@ -112,6 +127,27 @@ function VerifyUser() {
           </div>
         )}
       </Formik>
+      {sucessSnack ? (
+        <div
+          id="snackbar"
+          className={
+            "w-fit h-fit bg-green-400 border-green-800 text-black-700 border px-4 py-3 rounded transition invisible fixed bottom-4 left-4"
+          }
+          role="alert"
+        >
+          Snackbar message here.
+        </div>
+      ) : (
+        <div
+          id="snackbar"
+          className={
+            "w-fit h-fit bg-red-100 border-red-400 text-red-700 border px-4 py-3 rounded transition invisible fixed bottom-4 left-4"
+          }
+          role="alert"
+        >
+          Snackbar message here.
+        </div>
+      )}
     </div>
   );
 }

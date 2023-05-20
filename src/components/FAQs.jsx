@@ -3,7 +3,7 @@ import './FAQs.css'
 
 function FAQs() {
   return (
-    <div className="grid mx-auto grid-cols-7 text-white w-2/3 pt-6 mb-[90px] place-items-center h-max">
+    <div id="faqs" className="grid mx-auto grid-cols-7 text-white w-2/3 pt-6 mb-[90px] place-items-center h-max">
       <div className="container mx-auto col-span-7 lg:col-span-3">
         <h1 className="text-6xl font-medium text-center title-font mb-6">
           FAQ's

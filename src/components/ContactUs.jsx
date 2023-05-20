@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
+    <div id="contact">
       <div className="mx-[25px] lg:px-0 px-6 rounded-[20px] grid lg:grid-cols-2 grid-cols-1 bg-[#7353BA]">
         {/* Left */}
         <div className="stock mx-auto lg:my-[60px] mb-[60px] mt-[20px]">

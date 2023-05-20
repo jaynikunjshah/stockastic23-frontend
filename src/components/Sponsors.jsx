@@ -3,7 +3,7 @@ import React from 'react'
 function Sponsors() {
   return (
     <>
-      <div className='h-screen flex justify-between med:flex-col med:items-center tall:h-full'>
+      <div id="sponsors" className='h-screen flex justify-between med:flex-col med:items-center tall:h-full'>
         <div className='w-2/4 flex justify-center items-center med:w-full med:align-center'>
           <img src='sponsor_vector.svg' className='h-max w-max'/>
         </div>

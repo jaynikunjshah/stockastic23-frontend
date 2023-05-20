@@ -41,7 +41,7 @@ const EventCard = ({ event }) => (
 
 function Timeline() {
 	return (
-		<div id="Team" className="my-[10%]">
+		<div id="timeline" className="my-[10%]">
 			<div className="text-white text-6xl text-center">
 				Timeline Of The Event{" "}
 			</div>
