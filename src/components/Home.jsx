@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
 	return (
@@ -18,7 +17,7 @@ function Home() {
 				<div className="lg:flex lg:justify-center">
 					<div className="w-full flex flex-row p-0">
 						<a
-							href="#about"
+							href="#About-Us"
 							className="hidden my-auto m-3 text-[#7C7C7C] lg:inline-block lg:mt-0 hover:text-[#7353BA] pt-2 text-xl"
 						>
 							About
@@ -30,7 +29,7 @@ function Home() {
 							FAQs
 						</a>
 						<a
-							href="#contact"
+							href="#Contact-Us"
 							className="hidden my-auto m-3 text-[#7C7C7C] lg:inline-block lg:mt-0 hover:text-[#7353BA] pt-2 text-xl"
 						>
 							Contact Us

@@ -66,7 +66,7 @@ function VerifyUser() {
             .catch((e) => {
               console.log(e);
               setSuccessSnack(false);
-              showSnackbar(e.message, 1500);
+              showSnackbar(e.data.message, 1500);
             });
         }}
       >
