@@ -2,9 +2,9 @@ import React from "react";
 
 function AboutUs() {
 	return (
-		<div id="aboutus" className="grid grid-cols-3 w-4/5 mx-auto mt-9 text-white rounded-xl bg-[#7353BA] p-9 tracking-[1px]">
-			<img className="translate-x-[-7rem] h-full w-full" src="phone.svg" alt="phone.svg" />
-			<div className="col-span-2 translate-x-[-4rem]">
+		<div className="grid lg:grid-cols-3 w-4/5 mx-auto mt-[100px] mb-[200px] text-white rounded-xl bg-[#7353BA] p-9 tracking-[1px]">
+			<img className="lg:block hidden translate-x-[-7rem] mx-auto h-full w-full" src="phone.svg" alt="phone.svg" />
+			<div className="col-span-2 lg:translate-x-[-4rem]">
         <div className="mb-6 text-3xl text-[#d6d1d1]">About <span className="text-4xl font-bold text-[#0f1020]">STOCKASTICS</span></div>
 				<div className="text-xl text-[#d6d1d1]">
 					Join us for an exciting two-day online event hosted by Dream Merchants

@@ -111,23 +111,12 @@ function SignIn() {
                 <p className="error text-left text-red-500 text-[10px] ms-[10%] mb-[50px]">
                   {errors.password && touched.password && errors.password}
                 </p>
-                <button
-                  type="submit"
-                  className="bg-[#7353BA] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75"
-                >
-                  Sign In
-                </button>
-                  <button
-                    type="button"
-                    className="bg-[#1E1B1E] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 "
-                    onClick={() => {navigate("/signup")}}
-                  >
-                    Create Account
-                  </button>
+                <button type="submit" className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75">Sign In</button>
+                <a href="/SignUp"><button type="button" className="bg-[#1E1B1E] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 ">Create Account</button></a>
               </form>
-              <a className="flex absolute bottom-4 right-4 w-fit" href="mailto:dreammerchantsvit@gmail.com">
-                <img src="gmail-grey.svg" alt="gmail" />
-                <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>
+              <a href="" className="flex absolute bottom-4 right-4">
+                <img src="gmail-grey.svg" alt="gmail"/>
+                <div className="ms-2 my-auto">DM@gmail.com</div> 
               </a>
             </div>
           </div>

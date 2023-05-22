@@ -14,18 +14,18 @@ const Footer = () => {
           </a>
         </div>
         {/* Right */}
-        <div className="m-auto lg:text-[1.7rem] text-[1.4rem] text-white mb-9 lg:my-9">
+        <div className="m-auto lg:text-[1.7rem] text-[1.4rem] text-[#d6d1d1] mb-9 lg:my-9">
           {/* Information */}
           <div>
             <a
               className="font-semibold block mb-2"
-              href="#About-Us"
+              href="/"
             >
               About Us
             </a>
             <a
               className="font-semibold block my-2"
-              href="#Contact-Us"
+              href="mailto:dreammerchantsvit@gmail.com"
             >
               Contact Us
             </a>
