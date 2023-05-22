@@ -19,13 +19,13 @@ const Footer = () => {
           <div>
             <a
               className="font-semibold block mb-2"
-              href="#About-Us"
+              href="/"
             >
               About Us
             </a>
             <a
               className="font-semibold block my-2"
-              href="#Contact-Us"
+              href="mailto:dreammerchantsvit@gmail.com"
             >
               Contact Us
             </a>

@@ -131,7 +131,7 @@ function SignUp() {
 								>
 									Create Account
 								</button>
-								<a href="#">
+								<a href="/SignIn">
 									<button
 										type="button"
 										className="bg-[#1E1B1E]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
