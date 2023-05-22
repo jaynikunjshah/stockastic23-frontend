@@ -44,7 +44,7 @@ function VerifyUser() {
         onSubmit={async (values) => {
             console.log('pressed')
           await axios
-            .post(`https://stockastic23-backend.onrender.com/auth/verify`, {
+            .post(`${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/verify`, {
               email: localStorage.getItem("email"),
               otp: values.otp,
             })
@@ -104,21 +104,19 @@ function VerifyUser() {
                 </p>
                 <button
                   type="submit"
-                  className="bg-[#7353BA]  mx-[10%] w-[80%] px-4 py-3 mt-4 rounded-xl mb-6 hover:opacity-75"
+                  className="bg-[#7353BA]  mx-[10%] w-[50%] px-4 py-3 mt-4 rounded-xl mb-6 hover:opacity-75"
                 >
                   Verify
                 </button>
-                <a href="#">
                   <button
-                    className="bg-[#1E1B1E]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
+                    className="bg-[#1E1B1E]  mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
                   >
                     Resend OTP
                   </button>
-                </a>
               </form>
-              <a href="mailto:DM@gmail.com" className="flex mt-[4.3%] bottom-4">
+              <a href="mailto:dreammerchantsvit@gmail.com" className="flex mt-[4.3%] bottom-4 w-fit">
                 <img src="gmail-grey.svg" alt="gmail" />
-                <div className="ms-2 my-auto">DM@gmail.com</div>
+                <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>
               </a>
             </div>
             <div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl">
