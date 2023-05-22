@@ -58,7 +58,7 @@ function SignIn() {
             .catch((e) => {
               console.log(e);
               setSuccessSnack(false);
-              showSnackbar(e.message, 1500);
+              showSnackbar(e.data.message, 1500);
             });
         }}
       >
@@ -75,17 +75,17 @@ function SignIn() {
               <img className="mx-auto" src="man_with_pc.svg" alt="Sign In" />
             </div>
 
-            <div className="form w-100 text-center justify-between m-4">
-              <a href="#" className="flex justify-end">
+            <div className="form text-center m-4">
+              <a href="/" className="flex w-min mx-auto md:mr-11 md:ml-auto">
                 <img className="w-12" src="logo.svg" alt="" />
-                <div className="my-auto text-[#5FBDC8]">Stockastics</div>
+                <div className="my-auto text-[#5FBDC8]">Stockastic</div>
               </a>
 
               <form noValidate onSubmit={handleSubmit}>
                 <span className="block font-[1000] text-2xl mt-[17%] mb-3">
                   Sign In
                 </span>
-                <span className="block light">Welcome to Stockastics</span>
+                <span className="block light">Welcome to Stockastic</span>
                 <input
                   type="email"
                   name="email"
@@ -114,9 +114,9 @@ function SignIn() {
                 <button type="submit" className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75">Sign In</button>
                 <a href="/SignUp"><button type="button" className="bg-[#1E1B1E] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 ">Create Account</button></a>
               </form>
-              <a href="" className="flex absolute bottom-4 right-4">
+              <a href="mailto:dreammerchantsvit@gmail.com" className="flex absolute bottom-4 md:right-4">
                 <img src="gmail-grey.svg" alt="gmail"/>
-                <div className="ms-2 my-auto">DM@gmail.com</div> 
+                <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div> 
               </a>
             </div>
           </div>

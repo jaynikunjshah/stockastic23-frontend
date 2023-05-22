@@ -45,7 +45,7 @@ function FAQs() {
 	});
 
 	return (
-		<div className="grid mx-auto grid-cols-7 text-white w-2/3 pt-6 mb-[90px] place-items-center h-max mt-9">
+		<div id="faq" className="grid mx-auto grid-cols-7 text-white w-2/3 pt-6 mb-[90px] place-items-center h-max mt-9">
 			<div className="container mx-auto col-span-7 lg:col-span-3">
 				<h1 className="text-6xl font-medium text-center title-font mb-6">
 					FAQ's

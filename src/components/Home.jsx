@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
 	return (
@@ -18,7 +17,7 @@ function Home() {
 				<div className="lg:flex lg:justify-center">
 					<div className="w-full flex flex-row p-0">
 						<a
-							href="#about"
+							href="#About-Us"
 							className="hidden my-auto m-3 text-[#7C7C7C] lg:inline-block lg:mt-0 hover:text-[#7353BA] pt-2 text-xl"
 						>
 							About
@@ -30,18 +29,22 @@ function Home() {
 							FAQs
 						</a>
 						<a
-							href="#contact"
+							href="#Contact-Us"
 							className="hidden my-auto m-3 text-[#7C7C7C] lg:inline-block lg:mt-0 hover:text-[#7353BA] pt-2 text-xl"
 						>
 							Contact Us
 						</a>
 						<div className="xsnavadj:mr-[0.5rem] xsnavadj:mt-4">
-							<button className="px-4 py-2  transition duration-275 ease-in-out transform hover:scale-125 border-white text-[#0F0F0F] font-semibold rounded-full ml-4 bg-[#7353BA] hover:bg-purple-300  hover:shadow-md inline">
-								REGISTER
-							</button>
-							<button className="px-4 py-2 border transition duration-275 ease-in-out transform hover:scale-125 border-white text-[#7C7C7C] font-semibold rounded-full ml-4  hover:shadow-md inline">
-								LOGIN
-							</button>
+							<a href="/signup">
+								<button className="px-4 py-2  transition duration-275 ease-in-out transform hover:scale-125 border-white text-[#0F0F0F] font-semibold rounded-full ml-4 bg-[#7353BA] hover:bg-purple-300  hover:shadow-md inline">
+									REGISTER
+								</button>
+							</a>
+							<a href="/signin">
+								<button className="px-4 py-2 border transition duration-275 ease-in-out transform hover:scale-125 border-white text-[#7C7C7C] font-semibold rounded-full ml-4  hover:shadow-md inline">
+									LOGIN
+								</button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -69,12 +72,13 @@ function Home() {
 				</div>
 			</div>
 			<div className="md:order-3 md:w-1/2 md:mx-auto text-center">
-				<button
+				<a href="/signup"> <button
 					className=" bg-[#7353BA] rounded-full text-2xl px-9 py-6 shadow-xl 
-        hover: font-semibold ml-4 hover:bg-purple-300 hover:text-[#0F0F0F] transition duration-275 ease-in-out transform hover:scale-110"
+        hover: font-semibold ml-4 hover:bg-purple-300 hover:text-[#0F0F0F] transition duration-275 ease-in-out transform hover:scale-110 mt-9 md:mt-0"
 				>
 					REGISTER NOW
 				</button>
+        </a>
 			</div>
 		</div>
 	);
