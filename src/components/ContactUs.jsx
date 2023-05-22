@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
+    <div id="contact">
       <div className="mx-[25px] lg:px-0 px-6 rounded-[20px] grid lg:grid-cols-2 grid-cols-1 bg-[#7353BA]">
         {/* Left */}
         <div className="stock mx-auto lg:my-[60px] mb-[60px] mt-[20px]">
@@ -14,7 +14,7 @@ const Footer = () => {
           </a>
         </div>
         {/* Right */}
-        <div className="m-auto lg:text-[1.7rem] text-[1.4rem] text-white mb-9 lg:my-9">
+        <div className="m-auto lg:text-[1.7rem] text-[1.4rem] text-[#d6d1d1] mb-9 lg:my-9">
           {/* Information */}
           <div>
             <a

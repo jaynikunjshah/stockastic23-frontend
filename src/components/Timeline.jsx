@@ -41,9 +41,9 @@ const EventCard = ({ event }) => (
 
 function Timeline() {
 	return (
-		<div id="Team" className="my-[10%]">
-			<div className="text-white text-6xl text-center">
-				Timeline Of The Event{" "}
+		<div id="timeline" className="my-[10%]">
+			<div className="text-white font-bold text-6xl text-center">
+				Timeline Of The Event
 			</div>
 			<div className="mt-20 flex flex-col">
 				<VerticalTimeline layout="1-column">

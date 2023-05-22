@@ -37,7 +37,7 @@ function FAQs() {
 				<summary className="questions rounded-[15px] font-semibold tracking-[0.7px] list-none bg-[#1E1B1E] p-4">
 					{obj.questions}
 				</summary>
-				<div className="bg-[#1E1B1E] font-medium p-2 pb-0 tracking-[0.5px]">
+				<div className="bg-[#1E1B1E] font-medium p-2 pb-0 tracking-[0.5px] delay-700 transition duration-150 ease-in-out">
 					{obj.answers}
 				</div>
 			</details>
@@ -45,7 +45,7 @@ function FAQs() {
 	});
 
 	return (
-		<div className="grid mx-auto grid-cols-7 text-white w-2/3 pt-6 mb-[90px] place-items-center h-max">
+		<div className="grid mx-auto grid-cols-7 text-white w-2/3 pt-6 mb-[90px] place-items-center h-max mt-9">
 			<div className="container mx-auto col-span-7 lg:col-span-3">
 				<h1 className="text-6xl font-medium text-center title-font mb-6">
 					FAQ's

@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router";
 import axios from "redaxios";
 
 function SignUp() {
-
   const navigate = useNavigate();
+
+  console.log(import.meta.env.VITE_API_KEY);
+
+  const [sucessSnack, setSuccessSnack] = useState(false);
+
+  const showSnackbar = (message, duration) => {
+    var snackbar = document.getElementById("snackbar");
+    snackbar.innerHTML = message;
+    snackbar.classList.add("visible");
+    snackbar.classList.remove("invisible");
+    setTimeout(function () {
+      snackbar.classList.remove("visible");
+      snackbar.classList.add("invisible");
+    }, duration);
+  };
 
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -18,8 +32,9 @@ function SignUp() {
     password: Yup.string()
       .required("Password is a required field")
       .min(8, "Password must be at least 8 characters"),
-    passwordConfirm: Yup.string()
-      .required("Password confirm is a required field"),
+    passwordConfirm: Yup.string().required(
+      "Password confirm is a required field"
+    ).oneOf([Yup.ref('password'), null], 'Passwords must match'),
     regNo: Yup.string()
       .required("Register Number is a required field")
       .matches("^2[0-4][A-Z]{3}[0-4][0-9]{3}$", "Invalid Register Number"),
@@ -28,27 +43,33 @@ function SignUp() {
     <div className="items-center tracking-[1px] text-[#fff] flex justify-center bg-[#0F0F0F]">
       <Formik
         validationSchema={schema}
-        initialValues={{ email: "", password: "", passwordConfirm: "",  regNo: ""}}
+        initialValues={{
+          email: "",
+          password: "",
+          passwordConfirm: "",
+          regNo: "",
+        }}
         onSubmit={async (values) => {
           await axios
-            .post(`https://stockastic23-backend.onrender.com/auth/signup`, values)
+            .post(`${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/signup`, values)
             .then((e) => {
               const status = e.data.status;
               if (status === "false") {
-                alert(e.data.err);
+                setSuccessSnack(false);
+                showSnackbar(e.data.err, 1500);
               } else {
-                alert("Successful ! Logging in");
-                localStorage.setItem("email", values.email);
-                navigate("/verifyuser");
+                setSuccessSnack(true);
+                showSnackbar("Proceeding with Account Verification", 1500);
+                setTimeout(() => {
+                  localStorage.setItem("email", values.email);
+                  navigate("/verifyuser");
+                }, 2000);
               }
             })
             .catch((e) => {
               console.log(e);
-              if (e.message != "Request failed with status code 400") {
-                alert(e.message);
-              } else {
-                alert(e.response.data.err);
-              }
+              setSuccessSnack(false);
+              showSnackbar(e.message, 1500);
             });
         }}
       >
@@ -151,6 +172,27 @@ function SignUp() {
 					</div>
         )}
       </Formik>
+      {sucessSnack ? (
+        <div
+          id="snackbar"
+          className={
+            "w-fit h-fit bg-green-400 border-green-800 text-black-700 border px-4 py-3 rounded transition invisible fixed bottom-4 left-4"
+          }
+          role="alert"
+        >
+          Snackbar message here.
+        </div>
+      ) : (
+        <div
+          id="snackbar"
+          className={
+            "w-fit h-fit bg-red-100 border-red-400 text-red-700 border px-4 py-3 rounded transition invisible fixed bottom-4 left-4"
+          }
+          role="alert"
+        >
+          Snackbar message here.
+        </div>
+      )}
     </div>
   );
 }
