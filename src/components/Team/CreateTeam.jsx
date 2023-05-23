@@ -86,6 +86,14 @@ function CreateTeam() {
 						</div>
 						{addMembers}
 					</div>
+					<div className="mt-4 flex">
+						<button
+							type="button"
+							className="bg-[#EC0023] rounded-xl p-4 mx-auto"
+						>
+							Delete Team
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

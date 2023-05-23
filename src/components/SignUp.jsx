@@ -83,7 +83,7 @@ function SignUp() {
         }) => (
           <div className="login grid md:grid-cols-2 w-[100%] h-[100%]">
 						<div className="form text-center m-4">
-							<a href="#" className="flex w-min mx-auto md:mr-11 md:ml-auto">
+							<a href="/" className="flex w-min mx-auto md:mr-11 md:ml-auto">
 								<img className="w-12" src="logo.svg" alt="" />
 								<div className="my-auto text-[#5FBDC8]">Stockastics</div>
 							</a>

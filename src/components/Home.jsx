@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
 	return (
-		<div>
+		<div id="home">
 			<nav
 				className="flex flex-wrap lg:w-full w-full backdrop-filter backdrop-blur-lg 
       bg-opacity-100 top-0 left-0 right-0 items-center justify-between p-3
