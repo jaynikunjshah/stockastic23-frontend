@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCrown } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
+import { RiLogoutBoxRFill } from "react-icons/ri";
 import { useState, useRef } from "react";
 
 function CreateTeam() {
@@ -24,9 +25,8 @@ function CreateTeam() {
 				{!obj.leader && (
 					<MdDeleteForever
 						color="red"
-						className="my-auto ml-auto mr-0"
+						className="my-auto ml-auto mr-0 hover:opacity-75"
 						onClick={() => {
-							console.log("Hello");
 							let filteredArr = members.filter(
 								(item) => item.name !== obj.name
 							);
@@ -57,12 +57,12 @@ function CreateTeam() {
 	};
 
 	return (
-		<div className="h-screen flex place-items-center">
-			<div className="bg-[#7353BA] p-9 text-white mx-4 w-full lg:mx-[10rem] rounded-xl grid md:grid-cols-2 gap-5">
-				<div className="flex mx-auto">
-					<img className="lg:my-auto" src="CreateTeam.svg" alt="CreateTeam" />
+		<div className="md:h-screen flex place-items-center">
+			<div className="bg-[#7353BA] p-9 text-white mx-4 w-full lg:mx-[10rem] rounded-xl md:grid md:grid-cols-11 md:gap-5 md:my-0 my-4">
+				<div className="flex col-span-5 justify-center">
+					<img className="" src="CreateTeam.svg" alt="CreateTeam" />
 				</div>
-				<div>
+				<div className="col-span-5">
 					<div className="bg-[#0F0F0F] rounded-xl text-center font-bold text-xl md:text-3xl p-4 mb-4">
 						Team Code - {TeamCode}
 					</div>
@@ -86,6 +86,19 @@ function CreateTeam() {
 						</div>
 						{addMembers}
 					</div>
+					<div className="mt-4 flex">
+						<button
+							type="button"
+							className="bg-[#EC0023] rounded-xl p-4 mx-auto hover:opacity-75"
+						>
+							Delete Team
+						</button>
+					</div>
+				</div>
+				<div className="flex justify-end md:mt-0 mt-3 h-min">
+					<button color="white" type="button" className="md:my-0 my-auto w-min bg-[#EC0023] p-4 rounded-xl hover:opacity-75">
+						<RiLogoutBoxRFill />
+					</button>
 				</div>
 			</div>
 		</div>

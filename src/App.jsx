@@ -11,6 +11,7 @@ import VerifyUser from "../src/components/VerifyUser";
 import TeamDashboard from "../src/components/Team/TeamDashboard";
 import CreateTeam from "../src/components/Team/CreateTeam";
 import JoinTeam from "../src/components/Team/JoinTeam";
+import ForgotPassword from "../src/components/ForgotPassword";
 
 function App() {
 	const Front = () => {
@@ -35,6 +36,7 @@ function App() {
 				<Route path="TeamDashboard" element={<TeamDashboard />}></Route>
 				<Route path="CreateTeam" element={<CreateTeam />}></Route>
 				<Route exact path="JoinTeam/:code" element={<JoinTeam />}></Route>
+				<Route path="ForgotPassword" element={<ForgotPassword />}></Route>
 			</Routes>
 		</>
 	);

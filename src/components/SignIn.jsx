@@ -96,9 +96,10 @@ function SignIn() {
                   className="form-control inp_text p-[10px] text-[14px] rounded-xl mt-[50px] mb-[15px] bg-[#1E1B1E] mx-[10%] w-[80%]"
                   id="email"
                 />
-                <p className="error mb-[10px] text-left text-red-500 text-[10px] ms-[10%]">
+                <p className="error mb-[10px] text-left text-red-500 text-[12px] ms-[10%]">
                   {errors.email && touched.email && errors.email}
                 </p>
+                {/* Password */}
                 <input
                   type="password"
                   name="password"
@@ -108,12 +109,19 @@ function SignIn() {
                   placeholder="Enter password"
                   className="form-control p-[10px] text-[14px] rounded-xl bg-[#1E1B1E] mx-[10%] w-[80%] mb-[15px]"
                 />
-                <p className="error text-left text-red-500 text-[10px] ms-[10%] mb-[50px]">
+                <p className="error text-left text-red-500 text-[12px] ms-[10%]">
                   {errors.password && touched.password && errors.password}
                 </p>
+
+                {/* Forgot Password */}
+                <a className="text-sky-500 hover:text-sky-300 mr-[10%] mb-[10px] justify-end flex text-[15px]" href="#forget">Forgot password?</a>
+                
+                {/* Buttons */}
                 <button type="submit" className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75">Sign In</button>
                 <a href="/SignUp"><button type="button" className="bg-[#1E1B1E] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 ">Create Account</button></a>
               </form>
+
+              {/* Mail */}
               <a href="mailto:dreammerchantsvit@gmail.com" className="flex absolute bottom-4 md:right-4">
                 <img src="gmail-grey.svg" alt="gmail"/>
                 <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div> 
