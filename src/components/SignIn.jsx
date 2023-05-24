@@ -116,7 +116,7 @@ function SignIn() {
               </form>
               <a href="" className="flex absolute bottom-4 right-4">
                 <img src="gmail-grey.svg" alt="gmail"/>
-                <div className="ms-2 my-auto">DM@gmail.com</div> 
+                <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div> 
               </a>
             </div>
           </div>
