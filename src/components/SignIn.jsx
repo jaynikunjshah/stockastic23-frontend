@@ -58,7 +58,7 @@ function SignIn() {
             .catch((e) => {
               console.log(e);
               setSuccessSnack(false);
-              showSnackbar(e.message, 1500);
+              showSnackbar(e.data.message, 1500);
             });
         }}
       >
@@ -75,17 +75,17 @@ function SignIn() {
               <img className="mx-auto" src="man_with_pc.svg" alt="Sign In" />
             </div>
 
-            <div className="form w-100 text-center justify-between m-4">
-              <a href="#" className="flex justify-end">
+            <div className="form text-center m-4">
+              <a href="/" className="flex w-min mx-auto md:mr-11 md:ml-auto">
                 <img className="w-12" src="logo.svg" alt="" />
-                <div className="my-auto text-[#5FBDC8]">Stockastics</div>
+                <div className="my-auto text-[#5FBDC8]">Stockastic</div>
               </a>
 
               <form noValidate onSubmit={handleSubmit}>
                 <span className="block font-[1000] text-2xl mt-[17%] mb-3">
                   Sign In
                 </span>
-                <span className="block light">Welcome to Stockastics</span>
+                <span className="block light">Welcome to Stockastic</span>
                 <input
                   type="email"
                   name="email"
@@ -96,9 +96,10 @@ function SignIn() {
                   className="form-control inp_text p-[10px] text-[14px] rounded-xl mt-[50px] mb-[15px] bg-[#1E1B1E] mx-[10%] w-[80%]"
                   id="email"
                 />
-                <p className="error mb-[10px] text-left text-red-500 text-[10px] ms-[10%]">
+                <p className="error mb-[10px] text-left text-red-500 text-[12px] ms-[10%]">
                   {errors.email && touched.email && errors.email}
                 </p>
+                {/* Password */}
                 <input
                   type="password"
                   name="password"
@@ -108,13 +109,20 @@ function SignIn() {
                   placeholder="Enter password"
                   className="form-control p-[10px] text-[14px] rounded-xl bg-[#1E1B1E] mx-[10%] w-[80%] mb-[15px]"
                 />
-                <p className="error text-left text-red-500 text-[10px] ms-[10%] mb-[50px]">
+                <p className="error text-left text-red-500 text-[12px] ms-[10%]">
                   {errors.password && touched.password && errors.password}
                 </p>
+
+                {/* Forgot Password */}
+                <a className="text-sky-500 hover:text-sky-300 mr-[10%] mb-[10px] justify-end flex text-[15px]" href="#forget">Forgot password?</a>
+                
+                {/* Buttons */}
                 <button type="submit" className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75">Sign In</button>
                 <a href="/SignUp"><button type="button" className="bg-[#1E1B1E] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 ">Create Account</button></a>
               </form>
-              <a href="" className="flex absolute bottom-4 right-4">
+
+              {/* Mail */}
+              <a href="mailto:dreammerchantsvit@gmail.com" className="flex absolute bottom-4 md:right-4">
                 <img src="gmail-grey.svg" alt="gmail"/>
                 <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div> 
               </a>
