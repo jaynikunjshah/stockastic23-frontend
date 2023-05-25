@@ -115,7 +115,14 @@ function SignIn() {
                 </p>
 
                 {/* Forgot Password */}
-                <a className="w-fit text-sky-500 hover:text-sky-300 mb-[10px] justify-end flex text-[15px]" href="#forget">Forgot password?</a>
+                <div className="justify-end flex">
+									<a
+										className="w-fit mr-[10%] text-sky-500 hover:text-sky-300 mb-[10px]  text-[15px]"
+										href="#forget"
+									>
+										Forgot password?
+									</a>
+								</div>
                 
                 {/* Buttons */}
                 <button type="submit" className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75">Sign In</button>
