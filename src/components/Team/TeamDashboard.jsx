@@ -235,6 +235,12 @@ function TeamDashboard() {
         <span className="text-5xl text-white">Loading...</span>
       ) : teamExists ? (
         <div className="h-screen flex place-items-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/17/17367.png"
+            className="flex invert absolute h-12 top-0 right-0 m-4 cursor-pointer"
+            alt="logout"
+            onClick={loggedOut}
+          />
           <div className="bg-[#7353BA] p-9 text-white mx-4 w-full lg:mx-[10rem] rounded-xl grid md:grid-cols-2 gap-5">
             <div className="flex mx-auto">
               <img
