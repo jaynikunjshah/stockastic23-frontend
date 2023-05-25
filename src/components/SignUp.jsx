@@ -81,7 +81,7 @@ function SignUp() {
         }) => (
           <div className="login grid md:grid-cols-2 w-[100%] h-[100%]">
 						<div className="form text-center m-4">
-							<a href="/" className="flex w-min mx-auto md:mr-9 md:ml-auto">
+							<a href="/" className="flex w-fit">
 								<img className="w-12" src="logo.svg" alt="" />
 								<div className="my-auto text-[#5FBDC8]">Stockastic</div>
 							</a>
@@ -101,7 +101,7 @@ function SignUp() {
 									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 									id="email"
 								/>
-								<p className="error mb-[10px] text-left text-red-500 text-[10px]  ms-[10%]">
+								<p className="error mb-[10px] text-left text-red-500 text-[10px] ms-[10%] mt-[-5px]">
 									{errors.email && touched.email && errors.email}
 								</p>
 								<input
@@ -114,7 +114,7 @@ function SignUp() {
 									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 									id="regNo"
 								/>
-								<p className="error mb-[10px] text-left text-red-500 text-[10px] ms-[10%]">
+								<p className="error mb-[10px] text-left text-red-500 text-[10px] ms-[10%] mt-[-5px]">
 									{errors.regNo && touched.regNo && errors.regNo}
 								</p>
 								<input
@@ -127,7 +127,7 @@ function SignUp() {
 									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 									id="password"
 								/>
-								<p className="error mb-[10px] text-left text-red-500 text-[10px]  ms-[10%]">
+								<p className="error mb-[10px] text-left text-red-500 text-[10px]  ms-[10%] mt-[-5px]">
 									{errors.password &&
 										touched.password &&
 										errors.password}
@@ -141,7 +141,7 @@ function SignUp() {
 									placeholder="Confirm your password"
 									className="form-control p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 								/>
-								<p className="error mb-[40px] text-left text-red-500 text-[10px] ms-[10%]">
+								<p className="error mb-[40px] text-left text-red-500 text-[10px] ms-[10%] mt-[-5px]">
 									{errors.passwordConfirm && touched.passwordConfirm && errors.passwordConfirm}
 								</p>
 								<button
@@ -153,7 +153,7 @@ function SignUp() {
 								<a href="/SignIn">
 									<button
 										type="button"
-										className="bg-[#1E1B1E]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
+										className="bg-[#1E1B1E] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
 									>
 										Sign In
 									</button>
@@ -164,7 +164,7 @@ function SignUp() {
 								<div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>
 							</a>
 						</div>
-						<div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl ">
+						<div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl">
 							<img className="mx-auto" src="SignUpPic.svg" alt="" />
 						</div>
 					</div>

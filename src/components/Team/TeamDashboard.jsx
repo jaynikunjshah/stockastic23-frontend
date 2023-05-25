@@ -16,9 +16,7 @@ function TeamDashboard() {
 
   const [sucessSnack, setSuccessSnack] = useState(false);
 
-  const delay = ms => new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const showSnackbar = (message, duration) => {
     var snackbar = document.getElementById("snackbar");
@@ -67,7 +65,7 @@ function TeamDashboard() {
           if (leader === localStorage.getItem("name")) {
             setIsHeLeader(true);
           }
-          console.log(isHeLeader)
+          console.log(isHeLeader);
         }
       })
       .catch((e) => {
@@ -243,22 +241,32 @@ function TeamDashboard() {
                 Team Code - {teamCode}
               </div>
               <div className="bg-[#0F0F0F] rounded-xl text-center grid gap-6 font-bold text-xl md:text-3xl p-4">
-                <div className="flex mx-auto justify-center">
-                  <input
-                    defaultValue={settingTeamName}
-                    onChange={(e) => {
-                      setSettingTeamName(e.target.value);
-                    }}
-                    className="bg-[#0F0F0F] text-center w-3/5"
-                    type="text"
-                  />
-                  <img
-                    onClick={changeTeamNameButton}
-                    className="ml-4 w-4 hover:opacity-80"
-                    src="pencil.svg"
-                    alt="pencil"
-                  />
-                </div>
+                {isHeLeader ? (
+                  <div className="flex mx-auto justify-center">
+                    <input
+                      defaultValue={settingTeamName}
+                      onChange={(e) => {
+                        setSettingTeamName(e.target.value);
+                      }}
+                      className="bg-[#0F0F0F] text-center w-3/5"
+                      type="text"
+                    />
+                    <img
+                      onClick={changeTeamNameButton}
+                      className="ml-4 w-4 hover:opacity-80"
+                      src="pencil.svg"
+                      alt="pencil"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex mx-auto justify-center">
+                    <input
+                      defaultValue={settingTeamName}
+                      className="bg-[#0F0F0F] text-center w-3/5"
+                      type="text"
+                    />
+                  </div>
+                )}
                 {team.map((e, index) => {
                   return (
                     <div

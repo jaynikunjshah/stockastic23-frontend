@@ -31,6 +31,28 @@ function VerifyUser() {
     checkEmail();
   }, []);
 
+  const resendOTP = async () => {
+    await axios
+      .post(`${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/resendotp`, {
+        email: localStorage.getItem("email"),
+      })
+      .then((e) => {
+        const status = e.data.status;
+        if (status === "fail") {
+          setSuccessSnack(false);
+          showSnackbar(e.data.err, 1500);
+        } else {
+          setSuccessSnack(true);
+          showSnackbar("Successful ! Resend OTP sent", 1500);
+          delay(2000);
+        }
+      })
+      .catch((e) => {
+        setSuccessSnack(false);
+        showSnackbar(e.data.message, 1500);
+      });
+  };
+
   const schema = Yup.object().shape({
     otp: Yup.number().required("OTP must be entered"),
   });
@@ -42,14 +64,17 @@ function VerifyUser() {
           otp: "",
         }}
         onSubmit={async (values) => {
-            console.log('pressed')
+          console.log("pressed");
           await axios
-            .post(`${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/verify`, {
-              email: localStorage.getItem("email"),
-              otp: values.otp,
-            })
+            .post(
+              `${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/verify`,
+              {
+                email: localStorage.getItem("email"),
+                otp: values.otp,
+              }
+            )
             .then((e) => {
-                console.log(e)
+              console.log(e);
               const status = e.data.status;
               if (status === "false") {
                 setSuccessSnack(false);
@@ -59,8 +84,8 @@ function VerifyUser() {
                 showSnackbar("Account Successfully Created !", 1500);
                 setTimeout(() => {
                   localStorage.clear();
-                  localStorage.setItem("name",e.data.data.name)
-                  localStorage.setItem("jwt",e.data.token)
+                  localStorage.setItem("name", e.data.data.name);
+                  localStorage.setItem("jwt", e.data.token);
                   navigate("/teamdashboard");
                 }, 2000);
               }
@@ -80,15 +105,15 @@ function VerifyUser() {
           handleBlur,
           handleSubmit,
         }) => (
-          <div className="login grid md:grid-cols-2 w-[100%] h-[100%]">
-            <div className="form w-100 text-center m-4">
-              <a href="#" className="flex">
+          <div className="verifyuser grid md:grid-cols-2 w-[100%] h-[100%]">
+            <div className="form text-center m-4">
+              <a href="#" className="flex w-fit">
                 <img className="w-12" src="logo.svg" alt="" />
-                <div className="my-auto text-[#5FBDC8]">Stockastics</div>
+                <div className="my-auto text-[#5FBDC8]">Stockastic</div>
               </a>
 
               <form noValidate onSubmit={handleSubmit}>
-                <span className="block font-[500] text-2xl mt-9 mb-3">
+                <span className="block font-[500] text-2xl mt-[60px] mb-3">
                   VERIFY YOUR ACCOUNT
                 </span>
                 <input
@@ -101,7 +126,7 @@ function VerifyUser() {
                   className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
                   id="otp"
                 />
-                <p className="error mb-[10px] text-left text-red-500 text-[10px]">
+                <p className="error mb-[10px] mt-[5px] text-left text-red-500 text-[12px] ms-[10%]">
                   {errors.otp && touched.otp && errors.otp}
                 </p>
                 <button
@@ -110,13 +135,18 @@ function VerifyUser() {
                 >
                   Verify
                 </button>
-                  <button
-                    className="bg-[#1E1B1E]  mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
-                  >
-                    Resend OTP
-                  </button>
+                <button
+                  type="button"
+                  onClick={resendOTP}
+                  className="bg-[#1E1B1E]  mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
+                >
+                  Resend OTP
+                </button>
               </form>
-              <a href="mailto:dreammerchantsvit@gmail.com" className="flex mt-[4.3%] bottom-4 w-fit">
+              <a
+                href="mailto:dreammerchantsvit@gmail.com"
+                className="flex bottom-4 w-fit mt-[80px]"
+              >
                 <img src="gmail-grey.svg" alt="gmail" />
                 <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>
               </a>

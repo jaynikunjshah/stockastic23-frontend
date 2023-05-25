@@ -9,9 +9,8 @@ import SignIn from "../src/components/SignIn";
 import SignUp from "../src/components/SignUp";
 import VerifyUser from "../src/components/VerifyUser";
 import TeamDashboard from "../src/components/Team/TeamDashboard";
-import CreateTeam from "../src/components/Team/CreateTeam";
-import JoinTeam from "../src/components/Team/JoinTeam";
 import ForgotPassword from "../src/components/ForgotPassword";
+import ForgotPasswordPage from "./components/ForgotPasswordPage";
 
 function App() {
 	const Front = () => {
@@ -33,10 +32,9 @@ function App() {
 				<Route path="signin" element={<SignIn />}></Route>
 				<Route path="signup" element={<SignUp />}></Route>
 				<Route path="verifyuser" element={<VerifyUser />}></Route>
-				<Route path="TeamDashboard" element={<TeamDashboard />}></Route>
-				<Route path="CreateTeam" element={<CreateTeam />}></Route>
-				<Route exact path="JoinTeam/:code" element={<JoinTeam />}></Route>
-				<Route path="ForgotPassword" element={<ForgotPassword />}></Route>
+				<Route path="teamdashboard" element={<TeamDashboard />}></Route>
+				<Route path="resetpassword/:id" element={<ForgotPassword />}></Route>
+				<Route path="forgotpassword" element={<ForgotPasswordPage />}></Route>
 			</Routes>
 		</>
 	);
