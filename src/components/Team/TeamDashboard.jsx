@@ -16,6 +16,10 @@ function TeamDashboard() {
 
   const [sucessSnack, setSuccessSnack] = useState(false);
 
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
   const showSnackbar = (message, duration) => {
     var snackbar = document.getElementById("snackbar");
     snackbar.innerHTML = message;
@@ -60,6 +64,10 @@ function TeamDashboard() {
           setTeamCode(e.data.team.teamCode);
           setLeader(team[0]);
           setSettingTeamName(e.data.team.name);
+          if (leader === localStorage.getItem("name")) {
+            setIsHeLeader(true);
+          }
+          console.log(isHeLeader)
         }
       })
       .catch((e) => {
@@ -70,11 +78,6 @@ function TeamDashboard() {
 
   useEffect(() => {
     checkTeam();
-    if (!loading) {
-      if (leader === localStorage.getItem("name")) {
-        setIsHeLeader(true);
-      }
-    }
   }, [loading]);
 
   const createTeam = async () => {
@@ -98,13 +101,13 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team Created", 1500);
-          setTimeout(() => {}, 2000);
+          delay(2000);
         }
       })
       .catch((e) => {
         console.log(e);
         setSuccessSnack(false);
-        showSnackbar(e.message, 1500);
+        showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
   };
@@ -129,12 +132,12 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Joined team", 1500);
-          setTimeout(() => {}, 2000);
+          delay(2000);
         }
       })
       .catch((e) => {
         setSuccessSnack(false);
-        showSnackbar(e.message, 1500);
+        showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
   };
@@ -155,12 +158,12 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team deleted", 1500);
-          setTimeout(() => {}, 2000);
+          delay(2000);
         }
       })
       .catch((e) => {
         setSuccessSnack(false);
-        showSnackbar(e.message, 1500);
+        showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
   };
@@ -181,12 +184,12 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team left", 1500);
-          setTimeout(() => {}, 2000);
+          delay(2000);
         }
       })
       .catch((e) => {
         setSuccessSnack(false);
-        showSnackbar(e.message, 1500);
+        showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
   };
@@ -211,12 +214,12 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team name changed", 1500);
-          setTimeout(() => {}, 2000);
+          delay(2000);
         }
       })
       .catch((e) => {
         setSuccessSnack(false);
-        showSnackbar(e.message, 1500);
+        showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
   };
@@ -242,7 +245,7 @@ function TeamDashboard() {
               <div className="bg-[#0F0F0F] rounded-xl text-center grid gap-6 font-bold text-xl md:text-3xl p-4">
                 <div className="flex mx-auto justify-center">
                   <input
-                    value={teamName}
+                    defaultValue={settingTeamName}
                     onChange={(e) => {
                       setSettingTeamName(e.target.value);
                     }}
