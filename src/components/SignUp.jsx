@@ -7,8 +7,6 @@ import axios from "redaxios";
 function SignUp() {
   const navigate = useNavigate();
 
-  console.log(import.meta.env.VITE_API_KEY);
-
   const [sucessSnack, setSuccessSnack] = useState(false);
 
   const showSnackbar = (message, duration) => {
@@ -83,7 +81,7 @@ function SignUp() {
         }) => (
           <div className="login grid md:grid-cols-2 w-[100%] h-[100%]">
 						<div className="form text-center m-4">
-							<a href="/" className="flex w-min mx-auto md:mr-11 md:ml-auto">
+							<a href="/" className="flex w-min mx-auto md:mr-9 md:ml-auto">
 								<img className="w-12" src="logo.svg" alt="" />
 								<div className="my-auto text-[#5FBDC8]">Stockastic</div>
 							</a>
@@ -94,45 +92,30 @@ function SignUp() {
 								</span>
 								<span className="block text-[#858585]">Sign up now...</span>
 								<input
-									type="name"
-									name="name"
-									onChange={handleChange}
-									onBlur={handleBlur}
-									value={values.name}
-									placeholder="Enter Name"
-									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
-									id="name"
-								/>
-								<p className="error mb-[10px] text-left text-red-500 text-[10px]  ms-[10%]">
-									{errors.name && touched.name && errors.name}
-								</p>
-								<input
 									type="email"
 									name="email"
 									onChange={handleChange}
 									onBlur={handleBlur}
 									value={values.email}
-									placeholder="Enter VIT Email ID"
+									placeholder="Enter VIT Email ID only"
 									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 									id="email"
 								/>
-								<p className="error mb-[10px] text-left text-red-500 text-[10px] ms-[10%]">
+								<p className="error mb-[10px] text-left text-red-500 text-[10px]  ms-[10%]">
 									{errors.email && touched.email && errors.email}
 								</p>
 								<input
-									type="registration_number"
-									name="registration_number"
+									type="text"
+									name="regNo"
 									onChange={handleChange}
 									onBlur={handleBlur}
-									value={values.registration_number}
+									value={values.regNo}
 									placeholder="Enter Registration Number"
 									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
-									id="registration_number"
+									id="regNo"
 								/>
-								<p className="error mb-[10px] text-left text-red-500 text-[10px]  ms-[10%]">
-									{errors.registration_number &&
-										touched.registration_number &&
-										errors.registration_number}
+								<p className="error mb-[10px] text-left text-red-500 text-[10px] ms-[10%]">
+									{errors.regNo && touched.regNo && errors.regNo}
 								</p>
 								<input
 									type="password"
@@ -140,11 +123,26 @@ function SignUp() {
 									onChange={handleChange}
 									onBlur={handleBlur}
 									value={values.password}
-									placeholder="Enter password"
+									placeholder="Enter Password"
+									className="form-control inp_text p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
+									id="password"
+								/>
+								<p className="error mb-[10px] text-left text-red-500 text-[10px]  ms-[10%]">
+									{errors.password &&
+										touched.password &&
+										errors.password}
+								</p>
+								<input
+									type="password"
+									name="passwordConfirm"
+									onChange={handleChange}
+									onBlur={handleBlur}
+									value={values.passwordConfirm}
+									placeholder="Confirm your password"
 									className="form-control p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 								/>
 								<p className="error mb-[40px] text-left text-red-500 text-[10px] ms-[10%]">
-									{errors.password && touched.password && errors.password}
+									{errors.passwordConfirm && touched.passwordConfirm && errors.passwordConfirm}
 								</p>
 								<button
 									type="submit"
@@ -161,7 +159,7 @@ function SignUp() {
 									</button>
 								</a>
 							</form>
-							<a href="mailto:dreammerchantsvit@gmail.com" className="flex mt-[4.3%] bottom-4">
+							<a href="mailto:dreammerchantsvit@gmail.com" className="flex bottom-4">
 								<img src="gmail-grey.svg" alt="gmail" />
 								<div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>
 							</a>

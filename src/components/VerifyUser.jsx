@@ -59,7 +59,9 @@ function VerifyUser() {
                 showSnackbar("Account Successfully Created !", 1500);
                 setTimeout(() => {
                   localStorage.clear();
-                  navigate("/");
+                  localStorage.setItem("name",e.data.data.name)
+                  localStorage.setItem("jwt",e.data.token)
+                  navigate("/teamdashboard");
                 }, 2000);
               }
             })

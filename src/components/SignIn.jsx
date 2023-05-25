@@ -59,7 +59,7 @@ function SignIn() {
             .catch((e) => {
               console.log(e);
               setSuccessSnack(false);
-              showSnackbar(e.message, 1500);
+              showSnackbar(e.data.message, 1500);
             });
         }}
       >
@@ -77,7 +77,7 @@ function SignIn() {
             </div>
 
             <div className="form text-center m-4">
-              <a href="/" className="flex w-min mx-auto md:mr-14 md:ml-auto">
+              <a href="/" className="flex w-min mx-auto md:mr-9 md:ml-auto">
                 <img className="w-12" src="logo.svg" alt="" />
                 <div className="my-auto text-[#5FBDC8]">Stockastic</div>
               </a>
