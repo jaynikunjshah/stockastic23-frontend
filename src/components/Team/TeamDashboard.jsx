@@ -62,9 +62,7 @@ function TeamDashboard() {
           setTeamCode(e.data.team.teamCode);
           setLeader(team[0]);
           setSettingTeamName(e.data.team.name);
-          if (leader === localStorage.getItem("name")) {
-            setIsHeLeader(true);
-          }
+          setIsHeLeader(e.data.isLead);
           console.log(isHeLeader);
         }
       })
@@ -105,7 +103,7 @@ function TeamDashboard() {
       .catch((e) => {
         console.log(e);
         setSuccessSnack(false);
-        showSnackbar(e.data.message, 1500);
+        showSnackbar(e.response.data.message, 1500);
       });
     setLoading(false);
   };
@@ -135,7 +133,7 @@ function TeamDashboard() {
       })
       .catch((e) => {
         setSuccessSnack(false);
-        showSnackbar(e.data.message, 1500);
+        showSnackbar(e.response.data.message, 1500);
       });
     setLoading(false);
   };
@@ -222,10 +220,19 @@ function TeamDashboard() {
     setLoading(false);
   };
 
+  const loggedOut = () => {
+    localStorage.clear();
+    setSuccessSnack(true);
+    showSnackbar("Successful ! Logged Out", 1500);
+    setTimeout(() => {
+      navigate("/")
+    }, 2000);
+  };
+
   return (
     <>
       {loading ? (
-        <span className="text-8xl text-white">Loading...</span>
+        <span className="text-5xl text-white">Loading...</span>
       ) : teamExists ? (
         <div className="h-screen flex place-items-center">
           <div className="bg-[#7353BA] p-9 text-white mx-4 w-full lg:mx-[10rem] rounded-xl grid md:grid-cols-2 gap-5">
@@ -303,6 +310,12 @@ function TeamDashboard() {
         </div>
       ) : (
         <div className="h-screen flex place-items-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/17/17367.png"
+            className="flex invert absolute h-12 top-0 right-0 m-4 cursor-pointer"
+            alt="logout"
+            onClick={loggedOut}
+          />
           <div className="bg-[#7353BA] p-9 text-white mx-4 w-full lg:mx-[10rem] rounded-xl grid md:grid-cols-2 gap-5">
             <div className="flex mx-auto">
               <img

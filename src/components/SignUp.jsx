@@ -146,7 +146,7 @@ function SignUp() {
 								</p>
 								<button
 									type="submit"
-									className="bg-[#7353BA]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75"
+									className="bg-[#7353BA]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75 mt-[-11px]"
 								>
 									Create Account
 								</button>
@@ -159,7 +159,7 @@ function SignUp() {
 									</button>
 								</a>
 							</form>
-							<a href="mailto:dreammerchantsvit@gmail.com" className="flex bottom-4">
+							<a href="mailto:dreammerchantsvit@gmail.com" className="flex">
 								<img src="gmail-grey.svg" alt="gmail" />
 								<div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>
 							</a>
