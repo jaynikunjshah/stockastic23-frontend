@@ -85,7 +85,7 @@ function SignUp() {
 						<div className="form text-center m-4">
 							<a href="/" className="flex w-min mx-auto md:mr-11 md:ml-auto">
 								<img className="w-12" src="logo.svg" alt="" />
-								<div className="my-auto text-[#5FBDC8]">Stockastics</div>
+								<div className="my-auto text-[#5FBDC8]">Stockastic</div>
 							</a>
 
 							<form noValidate onSubmit={handleSubmit}>
@@ -143,12 +143,12 @@ function SignUp() {
 									placeholder="Enter password"
 									className="form-control p-[10px] text-[14px] rounded-xl my-[15px] bg-[#1E1B1E]  mx-[10%] w-[80%]"
 								/>
-								<p className="error mb-[40px] text-left text-red-500 text-[10px]  ms-[10%]">
+								<p className="error mb-[40px] text-left text-red-500 text-[10px] ms-[10%]">
 									{errors.password && touched.password && errors.password}
 								</p>
 								<button
 									type="submit"
-									className="bg-[#7353BA]  mx-[10%] w-[80%] px-4 py-3 mt-4 rounded-xl mb-6 hover:opacity-75"
+									className="bg-[#7353BA]  mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75"
 								>
 									Create Account
 								</button>
@@ -161,9 +161,9 @@ function SignUp() {
 									</button>
 								</a>
 							</form>
-							<a href="mailto:DM@gmail.com" className="flex mt-[4.3%] bottom-4">
+							<a href="mailto:dreammerchantsvit@gmail.com" className="flex mt-[4.3%] bottom-4">
 								<img src="gmail-grey.svg" alt="gmail" />
-								<div className="ms-2 my-auto">DM@gmail.com</div>
+								<div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>
 							</a>
 						</div>
 						<div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl ">

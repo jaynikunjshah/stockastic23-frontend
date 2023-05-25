@@ -49,16 +49,17 @@ function SignIn() {
               } else {
                 setSuccessSnack(true);
                 showSnackbar("Successful ! Logging In", 1500);
-                localStorage.setItem("jwt", e.data.jwt);
+                localStorage.setItem("jwt", e.data.token);
+                localStorage.setItem("name",e.data.data.name)
                 setTimeout(() => {
-                  navigate("/");
+                  navigate("/teamdashboard");
                 }, 2000);
               }
             })
             .catch((e) => {
               console.log(e);
               setSuccessSnack(false);
-              showSnackbar(e.data.message, 1500);
+              showSnackbar(e.message, 1500);
             });
         }}
       >
@@ -76,7 +77,7 @@ function SignIn() {
             </div>
 
             <div className="form text-center m-4">
-              <a href="/" className="flex w-min mx-auto md:mr-11 md:ml-auto">
+              <a href="/" className="flex w-min mx-auto md:mr-14 md:ml-auto">
                 <img className="w-12" src="logo.svg" alt="" />
                 <div className="my-auto text-[#5FBDC8]">Stockastic</div>
               </a>
@@ -114,7 +115,7 @@ function SignIn() {
                 </p>
 
                 {/* Forgot Password */}
-                <a className="text-sky-500 hover:text-sky-300 mr-[10%] mb-[10px] justify-end flex text-[15px]" href="#forget">Forgot password?</a>
+                <a className="w-fit text-sky-500 hover:text-sky-300 mb-[10px] justify-end flex text-[15px]" href="#forget">Forgot password?</a>
                 
                 {/* Buttons */}
                 <button type="submit" className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75">Sign In</button>
