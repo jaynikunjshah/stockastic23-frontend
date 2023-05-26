@@ -31,13 +31,13 @@ const Footer = () => {
             </a>
             <a
               className="font-semibold block my-2"
-              href="www.dreammerchantsvit.com"
+              href="https://www.dreammerchantsvit.com/"
             >
               About Dream Merchants
             </a>
             <a
               className="font-semibold block mt-2 mb-8"
-              href="dreammerchantsvit.com/#Events"
+              href="https://www.dreammerchantsvit.com/#Events"
             >
               Previous Events
             </a>
