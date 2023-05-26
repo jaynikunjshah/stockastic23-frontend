@@ -43,8 +43,8 @@ function VerifyUser() {
           showSnackbar(e.data.err, 1500);
         } else {
           setSuccessSnack(true);
-          showSnackbar("Successful ! Resend OTP sent", 1500);
-          delay(2000);
+          showSnackbar("Successful ! OTP sent", 1500);
+          console.log(sucessSnack)
         }
       })
       .catch((e) => {
@@ -91,7 +91,6 @@ function VerifyUser() {
               }
             })
             .catch((e) => {
-              console.log(e);
               setSuccessSnack(false);
               showSnackbar(e.data.message, 1500);
             });
@@ -105,14 +104,14 @@ function VerifyUser() {
           handleBlur,
           handleSubmit,
         }) => (
-          <div className="verifyuser grid md:grid-cols-2 w-[100%] h-[100%]">
+          <div className="verifyuser grid md:grid-cols-2 w-[100%] h-screen">
             <div className="form text-center m-4">
-              <a href="#" className="flex w-fit">
+              <a className="flex w-fit cursor-default">
                 <img className="w-12" src="logo.svg" alt="" />
                 <div className="my-auto text-[#5FBDC8]">Stockastic</div>
               </a>
 
-              <form noValidate onSubmit={handleSubmit}>
+              <form noValidate onSubmit={handleSubmit} className="mt-[200px]">
                 <span className="block font-[500] text-2xl mt-[60px] mb-3">
                   VERIFY YOUR ACCOUNT
                 </span>
@@ -138,14 +137,14 @@ function VerifyUser() {
                 <button
                   type="button"
                   onClick={resendOTP}
-                  className="bg-[#1E1B1E]  mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
+                  className="bg-[#1E1B1E] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100"
                 >
                   Resend OTP
                 </button>
               </form>
               <a
                 href="mailto:dreammerchantsvit@gmail.com"
-                className="flex bottom-4 w-fit mt-[80px]"
+                className="flex bottom-4 w-fit md:mt-[170px]"
               >
                 <img src="gmail-grey.svg" alt="gmail" />
                 <div className="ms-2 my-auto">dreammerchantsvit@gmail.com</div>

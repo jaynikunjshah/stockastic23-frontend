@@ -100,14 +100,14 @@ function ForgotPasswordPage() {
                 </p>
                 <button
                   type="submit"
-                  className="bg-[#7353BA] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-6 hover:opacity-75"
+                  className="bg-[#7353BA] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75"
                 >
                   Reset Password
                 </button>
                 <a href="/signin">
                   <button
                     type="button"
-                    className="bg-[#1E1B1E] mx-[10%] w-[80%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 "
+                    className="bg-[#1E1B1E] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 "
                     onClick={() => {navigate("/signin")}}
                   >
                     Go back
