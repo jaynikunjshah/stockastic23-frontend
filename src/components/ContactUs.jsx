@@ -21,7 +21,7 @@ const Footer = () => {
               className="font-semibold block mb-2 w-fit"
               href="#About-Us"
             >
-              About Us
+              About Stockastic
             </a>
             <a
               className="font-semibold block my-2 w-fit"
@@ -31,13 +31,13 @@ const Footer = () => {
             </a>
             <a
               className="font-semibold block my-2 w-fit"
-              href="#About-DM-Team"
+              href="https://www.dreammerchantsvit.com"
             >
               About Dream Merchants
             </a>
             <a
-              className="font-semibold block mt-2 mb-8 w-fit"
-              href="#Previous-Events"
+              className="font-semibold block mt-2 mb-8"
+              href="https://www.dreammerchantsvit.com/#Events"
             >
               Previous Events
             </a>
