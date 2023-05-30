@@ -18,25 +18,25 @@ const Footer = () => {
           {/* Information */}
           <div>
             <a
-              className="font-semibold block mb-2"
+              className="font-semibold block mb-2 w-fit"
               href="#About-Us"
             >
               About Us
             </a>
             <a
-              className="font-semibold block my-2"
+              className="font-semibold block my-2 w-fit"
               href="mailto:dreammerchantsvit@gmail.com"
             >
               Contact Us
             </a>
             <a
-              className="font-semibold block my-2"
+              className="font-semibold block my-2 w-fit"
               href="#About-DM-Team"
             >
               About Dream Merchants
             </a>
             <a
-              className="font-semibold block mt-2 mb-8"
+              className="font-semibold block mt-2 mb-8 w-fit"
               href="#Previous-Events"
             >
               Previous Events
