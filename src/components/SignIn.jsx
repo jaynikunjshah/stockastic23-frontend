@@ -9,6 +9,7 @@ function SignIn() {
   const navigate = useNavigate();
 
   const [sucessSnack, setSuccessSnack] = useState(false);
+  const [signingIn, setSigningIn] = useState(false);
 
   const showSnackbar = (message, duration) => {
     var snackbar = document.getElementById("snackbar");
@@ -40,6 +41,7 @@ function SignIn() {
         validationSchema={schema}
         initialValues={{ email: "", password: "" }}
         onSubmit={async (values) => {
+          setSigningIn(true)
           await axios
             .post(
               `${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/login`,
@@ -70,6 +72,7 @@ function SignIn() {
                 showSnackbar(e.data.message, 1500);
               }
             });
+            setSigningIn(false)
         }}
       >
         {({
@@ -136,9 +139,10 @@ function SignIn() {
                 {/* Buttons */}
                 <button
                   type="submit"
-                  className="bg-[#7353BA] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75"
+                  className={`mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75 ${signingIn ? "bg-[#7353BA] opacity-75" : "bg-[#7353BA]"}`}
+                  disabled={signingIn}
                 >
-                  Sign In
+                  {signingIn ? "Signing In..." : "Sign In"}
                 </button>
                 <a href="/SignUp">
                   <button

@@ -8,6 +8,7 @@ function ForgotPasswordPage() {
   const navigate = useNavigate();
 
   const [sucessSnack, setSuccessSnack] = useState(false);
+  const [forgettingPassword, setForgettingPassword] = useState(false);
 
   const showSnackbar = (message, duration) => {
     var snackbar = document.getElementById("snackbar");
@@ -34,11 +35,14 @@ function ForgotPasswordPage() {
     <div className="items-center tracking-[1px] text-[#fff] flex h-screen justify-center bg-[#0F0F0F]">
       <Formik
         validationSchema={schema}
-        initialValues={{ email: ""}}
+        initialValues={{ email: "" }}
         onSubmit={async (values) => {
+          setForgettingPassword(true);
           await axios
             .post(
-              `${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/forgotPassword`,
+              `${
+                import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL
+              }/auth/forgotPassword`,
               values
             )
             .then((e) => {
@@ -47,18 +51,16 @@ function ForgotPasswordPage() {
                 setSuccessSnack(false);
                 showSnackbar(e.data.err, 1500);
               } else {
-                setSuccessSnack(true);
-                showSnackbar("Successful ! Reset Email sent", 1500);
-                setTimeout(() => {
-                  navigate("/signin");
-                }, 2000);
+                alert("Successful ! Reset Email sent", 1500);
+                navigate("/signin");
               }
             })
             .catch((e) => {
               console.log(e);
-                setSuccessSnack(false);
-                showSnackbar(e.data.message, 1500);
+              setSuccessSnack(false);
+              showSnackbar(e.data.message, 1500);
             });
+          setForgettingPassword(false);
         }}
       >
         {({
@@ -71,7 +73,11 @@ function ForgotPasswordPage() {
         }) => (
           <div className="login grid md:grid-cols-2 w-[100%] h-[100%]">
             <div className="bg-[#7353BA] hidden md:flex m-4 rounded-s-2xl">
-              <img className="mx-auto" src="man_with_pc.svg" alt="Forgot password" />
+              <img
+                className="mx-auto"
+                src="man_with_pc.svg"
+                alt="Forgot password"
+              />
             </div>
 
             <div className="form text-center m-4">
@@ -100,15 +106,24 @@ function ForgotPasswordPage() {
                 </p>
                 <button
                   type="submit"
-                  className="bg-[#7353BA] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75"
+                  className={`mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75 ${
+                    forgettingPassword
+                      ? "bg-[#7353BA] opacity-75"
+                      : "bg-[#7353BA]"
+                  }`}
+                  disabled={forgettingPassword}
                 >
-                  Reset Password
+                  {forgettingPassword
+                    ? "Resetting Password..."
+                    : "Reset Password"}
                 </button>
                 <a href="/signin">
                   <button
                     type="button"
                     className="bg-[#1E1B1E] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100 "
-                    onClick={() => {navigate("/signin")}}
+                    onClick={() => {
+                      navigate("/signin");
+                    }}
                   >
                     Go back
                   </button>

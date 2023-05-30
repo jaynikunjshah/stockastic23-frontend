@@ -33,11 +33,11 @@ function FAQs() {
 
 	const faq = qans.map((obj, id) => {
 		return (
-			<details key={id} className="mt-4 w-full open:bg-[#1E1B1E]">
-				<summary className="questions rounded-[15px] font-semibold tracking-[0.7px] list-none bg-[#1E1B1E] p-4">
+			<details key={id} className="mt-4 w-full open:bg-[#1E1B1E] open:rounded-[15px]">
+				<summary className="questions rounded-[15px] font-semibold tracking-[0.7px] list-none bg-[#1E1B1E] p-4 cursor-pointer">
 					{obj.questions}
 				</summary>
-				<div className="bg-[#1E1B1E] font-medium p-2 pb-0 tracking-[0.5px] delay-700 transition duration-150 ease-in-out">
+				<div className="bg-[#1E1B1E] font-medium p-4 pt-0 tracking-[0.5px] delay-700 transition duration-150 ease-in-out rounded-[15px]">
 					{obj.answers}
 				</div>
 			</details>

@@ -7,16 +7,19 @@ function TeamDashboard() {
   const [teamExists, setTeamExists] = useState(false);
   const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [leader, setLeader] = useState("");
   const [teamCode, setTeamCode] = useState("");
   const [settingTeamName, setSettingTeamName] = useState("");
   const [joinTeamCode, setJoinTeamCode] = useState("");
   const [teamName, setTeamName] = useState("");
   const [isHeLeader, setIsHeLeader] = useState(false);
 
-  const [sucessSnack, setSuccessSnack] = useState(false);
+  const [creatingTeam,setCreatingTeam] = useState(false);
+  const [joiningTeam,setJoiningTeam] = useState(false);
+  const [deletingTeam,setDeletingTeam] = useState(false);
+  const [leavingTeam,setLeavingTeam] = useState(false);
+  const [changingTeamName, setChangingTeamName] = useState(false);
 
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const [sucessSnack, setSuccessSnack] = useState(false);
 
   const showSnackbar = (message, duration) => {
     var snackbar = document.getElementById("snackbar");
@@ -60,7 +63,6 @@ function TeamDashboard() {
           const members = e.data.team.members;
           setTeam(members.map((e) => e.name));
           setTeamCode(e.data.team.teamCode);
-          setLeader(team[0]);
           setSettingTeamName(e.data.team.name);
           setIsHeLeader(e.data.isLead);
           console.log(isHeLeader);
@@ -77,6 +79,7 @@ function TeamDashboard() {
   }, [loading]);
 
   const createTeam = async () => {
+    setCreatingTeam(true);
     setLoading(true);
     await axios
       .post(
@@ -97,7 +100,6 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team Created", 1500);
-          delay(2000);
         }
       })
       .catch((e) => {
@@ -106,9 +108,11 @@ function TeamDashboard() {
         showSnackbar(e.response.data.message, 1500);
       });
     setLoading(false);
+    setCreatingTeam(false);
   };
 
   const joinTeam = async () => {
+    setJoiningTeam(true);
     setLoading(true);
     await axios
       .post(
@@ -128,7 +132,6 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Joined team", 1500);
-          delay(2000);
         }
       })
       .catch((e) => {
@@ -136,9 +139,11 @@ function TeamDashboard() {
         showSnackbar(e.response.data.message, 1500);
       });
     setLoading(false);
+    setJoiningTeam(false);
   };
 
   const deleteTeam = async () => {
+    setDeletingTeam(true);
     setLoading(true);
     await axios
       .delete(`${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/team/`, {
@@ -154,7 +159,6 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team deleted", 1500);
-          delay(2000);
         }
       })
       .catch((e) => {
@@ -162,9 +166,11 @@ function TeamDashboard() {
         showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
+    setDeletingTeam(false);
   };
 
   const leaveTeam = async () => {
+    setLeavingTeam(true);
     setLoading(true);
     await axios
       .delete(`${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/team/leave`, {
@@ -180,7 +186,6 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team left", 1500);
-          delay(2000);
         }
       })
       .catch((e) => {
@@ -188,9 +193,11 @@ function TeamDashboard() {
         showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
+    setLeavingTeam(false);
   };
 
   const changeTeamNameButton = async () => {
+    setChangingTeamName(true)
     setLoading(true);
     await axios
       .patch(
@@ -210,7 +217,6 @@ function TeamDashboard() {
         } else {
           setSuccessSnack(true);
           showSnackbar("Successful ! Team name changed", 1500);
-          delay(2000);
         }
       })
       .catch((e) => {
@@ -218,6 +224,7 @@ function TeamDashboard() {
         showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
+    setChangingTeamName(false)
   };
 
   const loggedOut = () => {
@@ -263,12 +270,14 @@ function TeamDashboard() {
                       }}
                       className="bg-[#0F0F0F] text-center w-3/5"
                       type="text"
+                      disabled={changingTeamName}
                     />
                     <img
                       onClick={changeTeamNameButton}
-                      className="ml-4 w-4 hover:opacity-80"
+                      className={`ml-4 w-4 hover:opacity-80 ${changingTeamName ? "opacity-80" : ""}`}
                       src="pencil.svg"
                       alt="pencil"
+                      disabled={changingTeamName}
                     />
                   </div>
                 ) : (
@@ -277,6 +286,7 @@ function TeamDashboard() {
                       defaultValue={settingTeamName}
                       className="bg-[#0F0F0F] text-center w-3/5"
                       type="text"
+                      disabled={true}
                     />
                   </div>
                 )}
@@ -296,18 +306,20 @@ function TeamDashboard() {
                 {isHeLeader ? (
                   <button
                     type="button"
-                    className="bg-[#EC0023] rounded-xl p-4 mx-auto hover:opacity-75"
+                    className={`rounded-xl p-4 mx-auto hover:opacity-75 ${deletingTeam ? "bg-[#EC0023] opacity-75" : "bg-[#EC0023]"}`}
                     onClick={deleteTeam}
+                    disabled={deletingTeam}
                   >
-                    Delete Team
+                    {deletingTeam ? "Deleting Team..." : "Delete Team"}
                   </button>
                 ) : (
                   <button
                     type="button"
-                    className="bg-[#EC0023] rounded-xl p-4 mx-auto hover:opacity-75"
+                    className={`rounded-xl p-4 mx-auto hover:opacity-75 ${leavingTeam ? "bg-[#EC0023] opacity-75" : "bg-[#EC0023]"}`}
                     onClick={leaveTeam}
+                    disabled={leavingTeam}
                   >
-                    Leave Team
+                    {leavingTeam ? "Leaving Team..." : "Leave Team"}
                   </button>
                 )}
               </div>
@@ -340,13 +352,15 @@ function TeamDashboard() {
                     setTeamName(e.target.value);
                   }}
                   className="text-center text-black w-full py-3 rounded-xl"
+                  disabled={creatingTeam}
                 />
                 <button
                   type="button"
                   onClick={createTeam}
-                  className="bg-[#7353BA] w-full py-3 rounded-xl hover:opacity-75"
+                  className={`w-full py-3 rounded-xl hover:opacity-75 ${creatingTeam ? "bg-[#7353BA] opacity-75" : "bg-[#7353BA]"}`}
+                  disabled={creatingTeam}
                 >
-                  Create Your Team
+                  {creatingTeam ? "Creating Team..." : "Create Your Team"}
                 </button>
                 <div>OR</div>
                 <input
@@ -356,13 +370,15 @@ function TeamDashboard() {
                     setJoinTeamCode(e.target.value);
                   }}
                   className="text-center text-black w-full py-3 rounded-xl"
+                  disabled={joiningTeam}
                 />
                 <button
                   type="button"
-                  className="bg-[#7353BA] w-full py-3 m-1 rounded-xl hover:opacity-75"
+                  className={`w-full py-3 m-1 rounded-xl hover:opacity-75 ${joiningTeam ? "bg-[#7353BA] opacity-75" : "bg-[#7353BA]"}`}
                   onClick={joinTeam}
+                  disabled={joiningTeam}
                 >
-                  Join A Team
+                  {joiningTeam ? "Joining Team..." : "Join A Team"}
                 </button>
               </div>
             </div>

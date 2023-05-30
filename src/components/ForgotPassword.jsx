@@ -5,11 +5,11 @@ import { useLocation } from "react-router";
 import axios from "axios";
 
 function ForgotPassword() {
-
-	const location = useLocation()
-	const pathName = location.pathname.replace('/resetpassword/','')
-
+  const location = useLocation();
+  const pathName = location.pathname.replace("/resetpassword/", "");
+  
   const [sucessSnack, setSuccessSnack] = useState(false);
+  const [resettingPassword, setResettingPassword] = useState(false);
 
   const showSnackbar = (message, duration) => {
     var snackbar = document.getElementById("snackbar");
@@ -39,31 +39,35 @@ function ForgotPassword() {
             password: "",
             passwordConfirm: "",
           }}
-		  onSubmit={async (values) => {
-			await axios
-			  .patch(
-				`${import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL}/auth/resetPassword/${pathName}`,
-				values
-			  )
-			  .then((e) => {
-				const status = e.data.status;
-				if (status === "false") {
-				  setSuccessSnack(false);
-				  showSnackbar(e.data.err, 1500);
-				} else {
-				  setSuccessSnack(true);
-				  showSnackbar("Successful ! Password changed", 1500);
-				  setTimeout(() => {
-					navigate("/");
-				  }, 2000);
-				}
-			  })
-			  .catch((e) => {
-				console.log(e);
-				  setSuccessSnack(false);
-				  showSnackbar(e.response.data.message, 1500);
-			  });
-		  }}
+          onSubmit={async (values) => {
+            setResettingPassword(true);
+            await axios
+              .patch(
+                `${
+                  import.meta.env.VITE_NEXT_PUBLIC_SERVER_URL
+                }/auth/resetPassword/${pathName}`,
+                values
+              )
+              .then((e) => {
+                const status = e.data.status;
+                if (status === "false") {
+                  setSuccessSnack(false);
+                  showSnackbar(e.data.err, 1500);
+                } else {
+                  setSuccessSnack(true);
+                  showSnackbar("Successful ! Password changed", 1500);
+                  setTimeout(() => {
+                    navigate("/");
+                  }, 2000);
+                }
+              })
+              .catch((e) => {
+                console.log(e);
+                setSuccessSnack(false);
+                showSnackbar(e.response.data.message, 1500);
+              });
+            setResettingPassword(false);
+          }}
         >
           {({
             values,
@@ -108,9 +112,14 @@ function ForgotPassword() {
                 </p>
                 <button
                   type="submit"
-                  className="bg-[#7353BA] md:w-[30%] px-4 py-3 mt-4 rounded-xl mb-6 hover:opacity-75"
+                  className={`md:w-[30%] px-4 py-3 mt-4 rounded-xl mb-6 hover:opacity-75 ${
+                    resettingPassword
+                      ? "bg-[#7353BA] opacity-75"
+                      : "bg-[#7353BA]"
+                  }`}
+                  disabled={resettingPassword}
                 >
-                  Submit
+                  {resettingPassword ? "Updating..." : "Submit"}
                 </button>
               </form>
             </div>
