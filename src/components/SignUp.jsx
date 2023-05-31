@@ -16,7 +16,7 @@ function SignUp() {
     snackbar.innerHTML = message
     snackbar.classList.add('visible')
     snackbar.classList.remove('invisible')
-    setTimeout(function() {
+    setTimeout(function () {
       snackbar.classList.remove('visible')
       snackbar.classList.add('invisible')
     }, duration)
@@ -134,10 +134,10 @@ function SignUp() {
                         value={values.phone}
                         placeholder='Enter phone number'
                         className='form-control bg-[#1E1B1E] rounded-xl p-2 m-3 mb-2 w-full'
-                        style={{ 'marginTop': '12px', 'marginBottom': '8px' }}
+                        style={{ marginTop: '12px', marginBottom: '8px' }}
                         id='phone'
                       />
-                      <p className='error text-left ps-5 text-red-500 text-[10px] max-w-[80%]'>
+                      <p className='error text-left ps-2 text-red-500 text-[10px] max-w-[80%]'>
                         {errors.phone && touched.phone && errors.phone}
                       </p>
                     </div>
@@ -194,8 +194,9 @@ function SignUp() {
                   </div>
                   <button
                     type='submit'
-                    className={`mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75 mt-[20px] ${signingUp ? 'bg-[#7353BA] opacity-75' : 'bg-[#7353BA]'
-                      }`}
+                    className={`mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-6 hover:opacity-75 mt-[20px] ${
+                      signingUp ? 'bg-[#7353BA] opacity-75' : 'bg-[#7353BA]'
+                    }`}
                     disabled={signingUp}
                   >
                     {signingUp ? 'Creating Account...' : 'Create Account'}
