@@ -22,7 +22,7 @@ function App() {
     // Simulating image loading delay
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 200);
+    }, 500);
 
     // Clear the timer if the component is unmounted
     return () => clearTimeout(timer);
