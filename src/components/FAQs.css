@@ -2,7 +2,7 @@ details > .questions::after {
     float: right;
     content: url("../down-arrow.svg");
     position: relative;
-    bottom: 9px;
+    bottom: 35px;
   }
   
   details[open] > .questions::after {
