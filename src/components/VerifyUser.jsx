@@ -122,7 +122,7 @@ function VerifyUser() {
                   className="flex w-fit cursor-pointer"
                   href="https://stockastic.dreammerchantsvit.com"
                 >
-                  <img className="w-12" src="logo.svg" alt="" />
+                  <img className="w-12" src="logo.svg" alt="logo" />
                   <div className="my-auto text-[#5FBDC8]">Stockastic</div>
                 </a>
                 <form noValidate onSubmit={handleSubmit} className="mt-[200px]">
@@ -173,7 +173,7 @@ function VerifyUser() {
                 </a>
               </div>
               <div className="bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl">
-                <img className="mx-auto" src="SignUpPic.svg" alt="" />
+                <img className="mx-auto" src="SignUpPic.svg" alt="logo" />
               </div>
             </div>
           )}

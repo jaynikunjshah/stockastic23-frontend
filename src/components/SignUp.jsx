@@ -98,7 +98,7 @@ function SignUp() {
             <div className='login grid md:grid-cols-2 w-[100%] h-[100%]'>
               <div className='form text-center m-4'>
                 <a href='/' className='flex w-fit'>
-                  <img className='w-12' src='logo.svg' alt='' />
+                  <img className='w-12' src='logo.svg' alt='logo' />
                   <div className='my-auto text-[#5FBDC8]'>Stockastic</div>
                 </a>
 
@@ -221,7 +221,7 @@ function SignUp() {
               </div>
               <div class='h-[97vh]'>
                 <div className='bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl h-full'>
-                  <img className='mx-auto' src='SignUpPic.svg' alt='' />
+                  <img className='mx-auto' src='SignUpPic.svg' alt='sign up' />
                 </div>
               </div>
             </div>

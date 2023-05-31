@@ -97,7 +97,7 @@ function SignIn() {
 
               <div className="form text-center m-4">
                 <a href="/" className="flex w-fit">
-                  <img className="w-12" src="logo.svg" alt="" />
+                  <img className="w-12" src="logo.svg" alt="Logo" />
                   <div className="my-auto text-[#5FBDC8]">Stockastic</div>
                 </a>
 
