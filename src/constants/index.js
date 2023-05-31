@@ -1,29 +1,29 @@
 export const events = [
   {
-    image : "/sign-form_1.svg",
-    title : "Registration Day",
+    image: '/sign-form_1.svg',
+    title: 'Registration Day',
     points: [
-      "Registration day for an event: the anticipation and buzz builds as participants check-in and prepare to engage."
+      'Registrations for the highly anticipated event starts, so register now to have an experience of a lifetime.',
     ],
-    date: "From -  2/04/23  To - 3/04/23",
-      iconBg: "#ffffff",
+    date: 'From - 1st June, 2023. To - 4th June 2023.',
+    iconBg: '#ffffff',
   },
   {
-    image : "/quiz_1.svg",
-    title : "Quiz 1",
+    image: '/quiz_1.svg',
+    title: 'Round Zero',
     points: [
-      "Quiz for an event: a fun and competitive way to test knowledge, engage participants, and award prizes."
+      ' A fun and exciting test to tickle your minds and help you learn more about the concepts of finance',
     ],
-    date: "At - 4/04/23",
-    iconBg: "#ffffff",
+    date: 'On - 4th June, 2023.',
+    iconBg: '#ffffff',
   },
   {
-    image : "/six_1.svg",
-    title : "Event Day",
+    image: '/six_1.svg',
+    title: 'Event Day',
     points: [
-          "Event day: a culmination of planning, energy, and excitement as attendees come together to celebrate."
+      'The highly anticipated stock market event where the enthusiasts come together to explore the world of stocks and financial market.The event day promises',
     ],
-    date: "At - 6/06/23",
-    iconBg:" #ffffff"
+    date: 'On - 6th June, 2023.',
+    iconBg: ' #ffffff',
   },
-];
+]
