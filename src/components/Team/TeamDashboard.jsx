@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
+import Loader from "../Loader";
 
 function TeamDashboard() {
   const [teamExists, setTeamExists] = useState(false);
@@ -245,7 +246,9 @@ function TeamDashboard() {
         <meta name="description" content="Stockastic'23 Dashboard page" />
       </Helmet>
       {loading ? (
-        <span className="text-5xl text-white">Loading...</span>
+        <main className="absolute inset-0 flex items-center justify-center bg-[#000000] text-white">
+          <Loader />
+        </main>
       ) : teamExists ? (
         <div className="h-screen flex place-items-center">
           <img
