@@ -27,7 +27,7 @@ function SignIn() {
     email: Yup.string()
       .required("VIT Email ID is a required field")
       .matches(
-        "[a-z]+[.][a-z]+202[0-4]{1}[a-z]?@vitstudent.ac.in",
+        "^[a-z]+[.][a-z]+202[0-4]{1}[a-z]?@vitstudent.ac.in$",
         "Enter VIT Email ID only"
       )
       .email("Invalid email format"),
