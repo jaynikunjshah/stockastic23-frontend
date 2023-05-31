@@ -68,9 +68,7 @@ function Home() {
                 Inspire.
               </div>
               <p className="mt-2 text-[#7C7C7C] text-2xl px-2 py-8">
-                A stock market simulator event is a virtual platform for
-                participants to practice investing in stocks without using real
-                money.
+                Experience the thrill of trading in the stock market created by us, where real-life consequences await.
               </p>
             </div>
             <div className="md:shrink-0 md:w-5/8 w-3/5 flex align-center">

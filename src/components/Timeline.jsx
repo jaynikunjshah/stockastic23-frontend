@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet";
 
 const EventCard = ({ event }) => (
   <VerticalTimelineElement
+    dateClassName="mt-2"
     contentStyle={{
       background: "#7353BA",
       color: "#fff",
@@ -33,7 +34,7 @@ const EventCard = ({ event }) => (
           key={`event-point-${index}`}
           className="text-white-100 text-[14px] pl-1 tracking-wider"
         >
-          // {point}
+          {point}
         </li>
       ))}
     </ul>
