@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
 function TeamDashboard() {
@@ -13,10 +14,10 @@ function TeamDashboard() {
   const [teamName, setTeamName] = useState("");
   const [isHeLeader, setIsHeLeader] = useState(false);
 
-  const [creatingTeam,setCreatingTeam] = useState(false);
-  const [joiningTeam,setJoiningTeam] = useState(false);
-  const [deletingTeam,setDeletingTeam] = useState(false);
-  const [leavingTeam,setLeavingTeam] = useState(false);
+  const [creatingTeam, setCreatingTeam] = useState(false);
+  const [joiningTeam, setJoiningTeam] = useState(false);
+  const [deletingTeam, setDeletingTeam] = useState(false);
+  const [leavingTeam, setLeavingTeam] = useState(false);
   const [changingTeamName, setChangingTeamName] = useState(false);
 
   const [sucessSnack, setSuccessSnack] = useState(false);
@@ -197,7 +198,7 @@ function TeamDashboard() {
   };
 
   const changeTeamNameButton = async () => {
-    setChangingTeamName(true)
+    setChangingTeamName(true);
     setLoading(true);
     await axios
       .patch(
@@ -224,7 +225,7 @@ function TeamDashboard() {
         showSnackbar(e.data.message, 1500);
       });
     setLoading(false);
-    setChangingTeamName(false)
+    setChangingTeamName(false);
   };
 
   const loggedOut = () => {
@@ -232,12 +233,17 @@ function TeamDashboard() {
     setSuccessSnack(true);
     showSnackbar("Successful ! Logged Out", 1500);
     setTimeout(() => {
-      navigate("/")
+      navigate("/");
     }, 2000);
   };
 
   return (
     <>
+      <Helmet>
+        <title>Stockastic&apos;23 | Dashboard</title>
+        <link rel="icon" type="image/svg+xml" href="/stockastic_logo.svg" />
+        <meta name="description" content="Stockastic'23 Dashboard page" />
+      </Helmet>
       {loading ? (
         <span className="text-5xl text-white">Loading...</span>
       ) : teamExists ? (
@@ -274,7 +280,9 @@ function TeamDashboard() {
                     />
                     <img
                       onClick={changeTeamNameButton}
-                      className={`ml-4 w-4 hover:opacity-80 ${changingTeamName ? "opacity-80" : ""}`}
+                      className={`ml-4 w-4 hover:opacity-80 ${
+                        changingTeamName ? "opacity-80" : ""
+                      }`}
                       src="pencil.svg"
                       alt="pencil"
                       disabled={changingTeamName}
@@ -306,7 +314,9 @@ function TeamDashboard() {
                 {isHeLeader ? (
                   <button
                     type="button"
-                    className={`rounded-xl p-4 mx-auto hover:opacity-75 ${deletingTeam ? "bg-[#EC0023] opacity-75" : "bg-[#EC0023]"}`}
+                    className={`rounded-xl p-4 mx-auto hover:opacity-75 ${
+                      deletingTeam ? "bg-[#EC0023] opacity-75" : "bg-[#EC0023]"
+                    }`}
                     onClick={deleteTeam}
                     disabled={deletingTeam}
                   >
@@ -315,7 +325,9 @@ function TeamDashboard() {
                 ) : (
                   <button
                     type="button"
-                    className={`rounded-xl p-4 mx-auto hover:opacity-75 ${leavingTeam ? "bg-[#EC0023] opacity-75" : "bg-[#EC0023]"}`}
+                    className={`rounded-xl p-4 mx-auto hover:opacity-75 ${
+                      leavingTeam ? "bg-[#EC0023] opacity-75" : "bg-[#EC0023]"
+                    }`}
                     onClick={leaveTeam}
                     disabled={leavingTeam}
                   >
@@ -357,7 +369,9 @@ function TeamDashboard() {
                 <button
                   type="button"
                   onClick={createTeam}
-                  className={`w-full py-3 rounded-xl hover:opacity-75 ${creatingTeam ? "bg-[#7353BA] opacity-75" : "bg-[#7353BA]"}`}
+                  className={`w-full py-3 rounded-xl hover:opacity-75 ${
+                    creatingTeam ? "bg-[#7353BA] opacity-75" : "bg-[#7353BA]"
+                  }`}
                   disabled={creatingTeam}
                 >
                   {creatingTeam ? "Creating Team..." : "Create Your Team"}
@@ -374,7 +388,9 @@ function TeamDashboard() {
                 />
                 <button
                   type="button"
-                  className={`w-full py-3 m-1 rounded-xl hover:opacity-75 ${joiningTeam ? "bg-[#7353BA] opacity-75" : "bg-[#7353BA]"}`}
+                  className={`w-full py-3 m-1 rounded-xl hover:opacity-75 ${
+                    joiningTeam ? "bg-[#7353BA] opacity-75" : "bg-[#7353BA]"
+                  }`}
                   onClick={joinTeam}
                   disabled={joiningTeam}
                 >

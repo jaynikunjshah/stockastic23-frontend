@@ -11,33 +11,39 @@ import VerifyUser from "../src/components/VerifyUser";
 import TeamDashboard from "../src/components/Team/TeamDashboard";
 import ForgotPassword from "../src/components/ForgotPassword";
 import ForgotPasswordPage from "./components/ForgotPasswordPage";
+import { Helmet } from "react-helmet";
 
 function App() {
-	const Front = () => {
-		return (
-			<>
-				<Home />
-				<AboutUs />
-				<Timeline />
-				<Sponsors />
-				<FAQs />
-				<ContactUs />
-			</>
-		);
-	};
-	return (
-		<>
-			<Routes>
-				<Route path="/" element={Front()}></Route>
-				<Route path="signin" element={<SignIn />}></Route>
-				<Route path="signup" element={<SignUp />}></Route>
-				<Route path="verifyuser" element={<VerifyUser />}></Route>
-				<Route path="teamdashboard" element={<TeamDashboard />}></Route>
-				<Route path="resetpassword/:id" element={<ForgotPassword />}></Route>
-				<Route path="forgotpassword" element={<ForgotPasswordPage />}></Route>
-			</Routes>
-		</>
-	);
+  const Front = () => {
+    return (
+      <>
+        <Home />
+        <AboutUs />
+        <Timeline />
+        <Sponsors />
+        <FAQs />
+        <ContactUs />
+      </>
+    );
+  };
+  return (
+    <>
+      <Helmet>
+        <title>Stockastic&apos;23</title>
+        <link rel="icon" type="image/svg+xml" href="/stockastic_logo.svg" />
+        <meta name="description" content="Stockastic'23 Home Page" />
+      </Helmet>
+      <Routes>
+        <Route path="/" element={Front()}></Route>
+        <Route path="signin" element={<SignIn />}></Route>
+        <Route path="signup" element={<SignUp />}></Route>
+        <Route path="verifyuser" element={<VerifyUser />}></Route>
+        <Route path="teamdashboard" element={<TeamDashboard />}></Route>
+        <Route path="resetpassword/:id" element={<ForgotPassword />}></Route>
+        <Route path="forgotpassword" element={<ForgotPasswordPage />}></Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;
