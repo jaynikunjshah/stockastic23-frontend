@@ -106,7 +106,7 @@ function SignUp() {
                   <span className='block font-[500] text-2xl mt-[60px] mb-3'>
                     CREATE AN ACCOUNT
                   </span>
-                  <span className='block text-[#858585]'>Sign up now...</span>
+                  <span className='block text-[#858585] mb-3'>Sign up now...</span>
 
                   <div class='flex flex-col items-center'>
                     <div class='w-[80%]'>
@@ -117,10 +117,10 @@ function SignUp() {
                         onBlur={handleBlur}
                         value={values.email}
                         placeholder='Enter VIT Email ID only'
-                        className='form-control inp_text bg-[#1E1B1E] rounded-xl p-2 m-3 mb-2 w-full'
+                        className='form-control inp_text bg-[#1E1B1E] rounded-xl p-2 w-full mb-2'
                         id='email'
                       />
-                      <p className='error text-left ps-5 text-red-500 text-[10px] max-w-[80%]'>
+                      <p className='error text-left ps-1 text-red-500 text-[10px] max-w-[80%] mb-2'>
                         {errors.email && touched.email && errors.email}
                       </p>
                     </div>
@@ -133,11 +133,11 @@ function SignUp() {
                         onBlur={handleBlur}
                         value={values.phone}
                         placeholder='Enter phone number'
-                        className='form-control bg-[#1E1B1E] rounded-xl p-2 m-3 mb-2 w-full'
-                        style={{ marginTop: '12px', marginBottom: '8px' }}
+                        className='form-control inp_text bg-[#1E1B1E] rounded-xl p-2 w-full mb-2'
+                        style={{ marginBottom: '0.5rem' , marginLeft: '-1.5rem' }}
                         id='phone'
                       />
-                      <p className='error text-left ps-2 text-red-500 text-[10px] max-w-[80%]'>
+                      <p className='error text-left ml-[-6px] text-red-500 text-[10px] max-w-[80%] mb-2'>
                         {errors.phone && touched.phone && errors.phone}
                       </p>
                     </div>
@@ -150,10 +150,10 @@ function SignUp() {
                         onBlur={handleBlur}
                         value={values.regNo}
                         placeholder='Enter Registration Number'
-                        className='form-control bg-[#1E1B1E] rounded-xl p-2 m-3 mb-2 w-full'
+                        className='form-control inp_text bg-[#1E1B1E] rounded-xl p-2 w-full mb-2'
                         id='regNo'
                       />
-                      <p className='error text-left ps-5 text-red-500 text-[10px] max-w-[80%]'>
+                      <p className='error text-left ps-1 text-red-500 text-[10px] max-w-[80%] mb-2'>
                         {errors.regNo && touched.regNo && errors.regNo}
                       </p>
                     </div>
@@ -166,10 +166,10 @@ function SignUp() {
                         onBlur={handleBlur}
                         value={values.password}
                         placeholder='Enter Password'
-                        className='form-control bg-[#1E1B1E] rounded-xl p-2 m-3 mb-2 w-full'
+                        className='form-control inp_text bg-[#1E1B1E] rounded-xl p-2 w-full mb-2'
                         id='password'
                       />
-                      <p className='error text-left ps-5 text-red-500 text-[10px] max-w-[80%]'>
+                      <p className='error text-left ps-1 text-red-500 text-[10px] max-w-[80%] mb-2'>
                         {errors.password && touched.password && errors.password}
                       </p>
                     </div>
@@ -182,10 +182,10 @@ function SignUp() {
                         onBlur={handleBlur}
                         value={values.passwordConfirm}
                         placeholder='Confirm your password'
-                        className='form-control bg-[#1E1B1E] rounded-xl p-2 m-3 mb-2 w-full'
+                        className='form-control inp_text bg-[#1E1B1E] rounded-xl p-2 w-full mb-2'
                         id='passwordConfirm'
                       />
-                      <p className='error text-left ps-5 text-red-500 text-[10px] max-w-[80%]'>
+                      <p className='error text-left ps-1 text-red-500 text-[10px] max-w-[80%] mb-2'>
                         {errors.passwordConfirm &&
                           touched.passwordConfirm &&
                           errors.passwordConfirm}
