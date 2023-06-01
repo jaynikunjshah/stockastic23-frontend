@@ -26,7 +26,7 @@ function SignUp() {
     email: Yup.string()
       .required('Email ID is a required field')
       .matches(
-        '^[a-z]+[.][a-z]*202[0-3]{1}[a-z]?@vitstudent.ac.in$',
+        '*@vitstudent.ac.in$',
         'Enter VIT Email ID only'
       ),
     password: Yup.string()
