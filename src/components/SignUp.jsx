@@ -26,8 +26,8 @@ function SignUp() {
     email: Yup.string()
       .required('Email ID is a required field')
       .matches(
-        "^[a-z]+[.][a-z]+202[0-4]{1}[a-z]?@vitstudent.ac.in$",
-        "Enter VIT Email ID only"
+        '^[a-z]+[.][a-z]+202[0-4]{1}[a-z]?@vitstudent.ac.in$',
+        'Enter VIT Email ID only'
       ),
     password: Yup.string()
       .required('Password is a required field')
@@ -220,7 +220,7 @@ function SignUp() {
                   </div>
                 </a>
               </div>
-              <div class='h-[97vh]'>
+              <div class='h-[97vh] md:block hidden'>
                 <div className='bg-[#7353BA] hidden md:flex m-4 rounded-e-2xl h-full'>
                   <img className='mx-auto' src='SignUpPic.svg' alt='sign up' />
                 </div>
