@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import Loader from "../Loader";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 function TeamDashboard() {
   const [teamExists, setTeamExists] = useState(false);
@@ -20,6 +21,15 @@ function TeamDashboard() {
   const [deletingTeam, setDeletingTeam] = useState(false);
   const [leavingTeam, setLeavingTeam] = useState(false);
   const [changingTeamName, setChangingTeamName] = useState(false);
+
+  const textRef = useRef(null);
+
+  const handleCopyClick = () => {
+    if (textRef.current) {
+      textRef.current.select();
+      document.execCommand("copy");
+    }
+  };
 
   const [sucessSnack, setSuccessSnack] = useState(false);
 
@@ -229,6 +239,12 @@ function TeamDashboard() {
     setChangingTeamName(false);
   };
 
+  const copied = () => {
+    navigator.clipboard.writeText(teamCode);
+    setSuccessSnack(true);
+    showSnackbar("Successful ! Team code copied", 1500);
+  };
+
   const loggedOut = () => {
     localStorage.clear();
     setSuccessSnack(true);
@@ -266,7 +282,10 @@ function TeamDashboard() {
               />
             </div>
             <div>
-              <div className="bg-[#0F0F0F] rounded-xl text-center font-bold text-xl md:text-3xl p-4 mb-4">
+              <div
+                className="bg-[#0F0F0F] rounded-xl text-center font-bold text-xl md:text-3xl p-4 mb-4"
+                onClick={copied}
+              >
                 Team Code - {teamCode}
               </div>
               <div className="bg-[#0F0F0F] rounded-xl text-center grid gap-6 font-bold text-xl md:text-3xl p-4">
