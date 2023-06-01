@@ -163,7 +163,7 @@ function SignIn() {
                 {/* Mail */}
                 <a
                   href='mailto:dreammerchantsvit@gmail.com'
-                  className='md:flex md:w-fit hidden md:absolute md:bottom-3'
+                  className='md:flex md:w-fit hidden md:absolute md:bottom-3 md:right-3'
                 >
                   <img src='gmail-grey.svg' alt='gmail' />
                   <div className='ms-2 my-auto'>

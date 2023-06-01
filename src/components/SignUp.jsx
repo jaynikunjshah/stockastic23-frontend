@@ -201,10 +201,7 @@ function SignUp() {
                     }`}
                     disabled={signingUp}
                   >
-                    <span className='w-fit'>
                       {signingUp ? 'Creating Account...' : 'Create Account'}
-                    </span>
-
                   </button>
                     <button
                       type='button'
@@ -213,7 +210,7 @@ function SignUp() {
                         navigate('/SignIn')
                       }}
                     >
-                      <span className='w-fit'>Sign In</span>
+                      Sign In
                     </button>
                 </form>
 
