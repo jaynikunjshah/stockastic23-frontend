@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import Loader from "../Loader";
-import CopyToClipboard from "react-copy-to-clipboard";
 
 function TeamDashboard() {
   const [teamExists, setTeamExists] = useState(false);
@@ -21,15 +20,6 @@ function TeamDashboard() {
   const [deletingTeam, setDeletingTeam] = useState(false);
   const [leavingTeam, setLeavingTeam] = useState(false);
   const [changingTeamName, setChangingTeamName] = useState(false);
-
-  const textRef = useRef(null);
-
-  const handleCopyClick = () => {
-    if (textRef.current) {
-      textRef.current.select();
-      document.execCommand("copy");
-    }
-  };
 
   const [sucessSnack, setSuccessSnack] = useState(false);
 

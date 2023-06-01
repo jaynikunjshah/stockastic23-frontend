@@ -25,7 +25,10 @@ function SignUp() {
   const schema = Yup.object().shape({
     email: Yup.string()
       .required('Email ID is a required field')
-      .matches('*@vitstudent.ac.in$', 'Enter VIT Email ID only'),
+      .matches(
+        /^[\w.%+-]+@vitstudent\.ac\.in$/,
+        'Enter VIT Email ID only'
+      ),
     password: Yup.string()
       .required('Password is a required field')
       .min(8, 'Password must be at least 8 characters'),
@@ -103,9 +106,7 @@ function SignUp() {
                   <span className='block font-[500] text-2xl mt-[60px] mb-3'>
                     CREATE AN ACCOUNT
                   </span>
-                  <span className='block text-[#858585] mb-3'>
-                    Sign up now...
-                  </span>
+                  <span className='block text-[#858585] mb-3'>Sign up now...</span>
 
                   <div class='flex flex-col items-center'>
                     <div class='w-[80%]'>
@@ -133,10 +134,7 @@ function SignUp() {
                         value={values.phone}
                         placeholder='Enter phone number'
                         className='form-control inp_text bg-[#1E1B1E] rounded-xl p-2 w-full mb-2'
-                        style={{
-                          marginBottom: '0.5rem',
-                          marginLeft: '-1.5rem',
-                        }}
+                        style={{ marginBottom: '0.5rem' , marginLeft: '-1.5rem' }}
                         id='phone'
                       />
                       <p className='error text-left ml-[-6px] text-red-500 text-[10px] max-w-[80%] mb-2'>
@@ -201,19 +199,16 @@ function SignUp() {
                     }`}
                     disabled={signingUp}
                   >
-                      {signingUp ? 'Creating Account...' : 'Create Account'}
+                    {signingUp ? 'Creating Account...' : 'Create Account'}
                   </button>
-                    <button
+                </form>
+                <button
                       type='button'
                       className='bg-[#1E1B1E] mx-[10%] w-[50%] px-4 py-3 rounded-xl mb-[30px] hover:ring hover:ring-violet-100'
-                      onClick={() => {
-                        navigate('/SignIn')
-                      }}
+                      onClick={() => {navigate("/signin")}}
                     >
                       Sign In
                     </button>
-                </form>
-
                 <a
                   href='mailto:dreammerchantsvit@gmail.com'
                   className='md:flex md:w-fit hidden md:absolute md:bottom-3'
