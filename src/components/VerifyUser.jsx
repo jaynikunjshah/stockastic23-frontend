@@ -58,6 +58,10 @@ function VerifyUser() {
     setResendingOTP(false);
   };
 
+  useEffect(() => {
+    alert("Check your email spam folders for OTP if not received already")
+  },[])
+
   const schema = Yup.object().shape({
     otp: Yup.number().required("OTP must be entered"),
   });
