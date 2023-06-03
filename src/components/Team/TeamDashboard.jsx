@@ -257,14 +257,14 @@ function TeamDashboard() {
         </main>
       ) : teamExists ? (
         <>
-          <div className='h-screen flex place-items-center'>
+          <div className='flex justify-center items-center md:h-screen'>
             <img
               src='https://cdn-icons-png.flaticon.com/512/17/17367.png'
               className='flex invert absolute h-12 top-0 right-0 m-4 cursor-pointer'
               alt='logout'
               onClick={loggedOut}
             />
-            <div className='bg-[#7353BA] p-9 text-white mx-4 w-full lg:mx-[10rem] rounded-xl grid md:grid-cols-2 gap-5'>
+            <div className='bg-[#7353BA] my-4 p-9 text-white mx-4 w-full lg:mx-[10rem] rounded-xl grid md:grid-cols-2 gap-5'>
               <div className='flex mx-auto'>
                 <img
                   className='lg:my-auto'
