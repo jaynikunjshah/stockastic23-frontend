@@ -54,7 +54,7 @@ const Footer = () => {
               href="tel:+91 9301303584"
               className="font-light lg:text-[1.8rem] text-[1.4rem]"
             >
-              Helpline - +91 93013 03584
+              Helpline - +91 99691 38221
             </a>
             {/* Social Media Handles */}
             <div className="grid grid-cols-4 mt-8 gap-3">
