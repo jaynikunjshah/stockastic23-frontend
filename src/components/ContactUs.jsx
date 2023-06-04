@@ -51,10 +51,10 @@ const Footer = () => {
             </div>
             {/* Help Line */}
             <a
-              href="tel:+91 9301303584"
+              href="tel:+91 9027625359"
               className="font-light lg:text-[1.8rem] text-[1.4rem]"
             >
-              Helpline - +91 99691 38221
+              Helpline - +91 90276 25359
             </a>
             {/* Social Media Handles */}
             <div className="grid grid-cols-4 mt-8 gap-3">
