@@ -38,7 +38,6 @@ $ git clone https://github.com/jaynikunjshah/stockastic23-frontend/
 $ cd stockastic23-frontend
 $ npm i
 $ npm run dev
->> Refer .env.example for environment variables
 ```
 
 ## Contributors
