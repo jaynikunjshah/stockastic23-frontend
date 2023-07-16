@@ -47,7 +47,7 @@ $ npm run dev
 
 <td>Jay Shah
 	<p align="center">
-		<img src = "https://avatars.githubusercontent.com/jaynikunjshah" width="150" height="150" alt="Jay" style="borderRadius: "50%"">
+		<img src = "https://avatars.githubusercontent.com/jaynikunjshah" width="150" height="150" alt="Jay" style={{borderRadius: "50%"}}>
 	</p>
 	<p align="center">
 		<a href = "https://github.com/jaynikunjshah"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
