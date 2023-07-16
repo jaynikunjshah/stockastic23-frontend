@@ -102,9 +102,6 @@ $ npm run dev
 </tr>
 </table>
 
-## License
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
-
 <p align="center">
 	With ❤️ by <a href="https://dreammerchantsvit.com/ target="_blank">Dream Merchants - VIT</a>
 </p>
