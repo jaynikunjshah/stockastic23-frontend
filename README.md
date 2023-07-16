@@ -1,4 +1,4 @@
-<p align="center"><a href="https://dreammerchantsvit.com/" target="_blank"><img src="https://i.ibb.co/jTfpkjG/stockastic-logo.png" title="Dreammerchants-VIT" alt="DreamMerchants-VIT"></a>
+<p align="center"><img src="https://i.ibb.co/jTfpkjG/stockastic-logo.png" title="Dreammerchants-VIT" alt="DreamMerchants-VIT">
 </p>
 
 # Stockastic'23 Portal
@@ -25,7 +25,6 @@
 ## Screenshots
 <p align="center">
 <img src="https://i.ibb.co/fMWNZFF/2023-07-16.png" alt="Project Screenshots" >
-
 
 <img src="https://i.ibb.co/7zRxNp9/2023-07-16-1.png" alt="Project Screenshots" >
 
@@ -88,6 +87,15 @@ $ npm run dev
 	</p>
 	<p align="center">
 		<a href = "https://github.com/shantanu1805"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
+	</p>
+</td>
+
+<td>Manjunadha Abhinai
+	<p align="center">
+		<img src = "https://avatars.githubusercontent.com/kmabhinai" width="150" height="150" alt="Jay">
+	</p>
+	<p align="center">
+		<a href = "https://github.com/kmabhinai"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
 	</p>
 </td>
 
