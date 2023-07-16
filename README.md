@@ -1,4 +1,4 @@
-<p align="center"><a href="https://dreammerchantsvit.com/" target="_blank"><img src="https://dreammerchantsvit.com/dmLogo.png" title="Dreammerchants-VIT" alt="DreamMerchants-VIT"></a>
+<p align="center"><a href="https://dreammerchantsvit.com/" target="_blank"><img url="https://stockastic.dreammerchantsvit.com/stockastic_logo.svg" title="Dreammerchants-VIT" alt="DreamMerchants-VIT"></a>
 </p>
 
 # Stockastic'23 Portal
@@ -15,6 +15,7 @@
 - Create team
 - Join team using code/leave team
 - Easy to use.
+- Displays all details about the event.
 	
 ## Important Links
 - [Stockastic Landing Page](https://stockastic.dreammerchantsvit.com/)
@@ -23,11 +24,11 @@
 
 ## Screenshots
 <p align="center">
-<img src="https://private-user-images.githubusercontent.com/68477234/251393372-091e7d01-5374-4a4a-bc5c-cc61c9b41d8a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NjMyODIwLCJuYmYiOjE2ODg2MzI1MjAsInBhdGgiOiIvNjg0NzcyMzQvMjUxMzkzMzcyLTA5MWU3ZDAxLTUzNzQtNGE0YS1iYzVjLWNjNjFjOWI0MWQ4YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNzA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDcwNlQwODM1MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYjRiM2NlYjJhY2I2ZTU5MmZmZTQ2NjJiNWFkNjQ3MzcwZTBiMmRiNjQwNDFkNGNlNTgzZWVjMTIxZDRhNTY1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.0FzPf-hXJKBG5_0W2s26t8vH5C84G4Vbh3qRB-nU3tw" alt="Project Screenshots" >
+<img url="https://private-user-images.githubusercontent.com/68477234/251393372-091e7d01-5374-4a4a-bc5c-cc61c9b41d8a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NjMyODIwLCJuYmYiOjE2ODg2MzI1MjAsInBhdGgiOiIvNjg0NzcyMzQvMjUxMzkzMzcyLTA5MWU3ZDAxLTUzNzQtNGE0YS1iYzVjLWNjNjFjOWI0MWQ4YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNzA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDcwNlQwODM1MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYjRiM2NlYjJhY2I2ZTU5MmZmZTQ2NjJiNWFkNjQ3MzcwZTBiMmRiNjQwNDFkNGNlNTgzZWVjMTIxZDRhNTY1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.0FzPf-hXJKBG5_0W2s26t8vH5C84G4Vbh3qRB-nU3tw" alt="Project Screenshots" >
 
-<img src="https://private-user-images.githubusercontent.com/68477234/251393595-964c901e-e06f-4e26-a3fa-77dfd171ae54.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NjMyODIwLCJuYmYiOjE2ODg2MzI1MjAsInBhdGgiOiIvNjg0NzcyMzQvMjUxMzkzNTk1LTk2NGM5MDFlLWUwNmYtNGUyNi1hM2ZhLTc3ZGZkMTcxYWU1NC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNzA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDcwNlQwODM1MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jNmY4MmYwMjZjZTc5ODM4ZDczMTZkYzBkNzdiZjNmNjNiOTVmMDA4M2EyNTY1ODFjOWI0MmZjZjA3NzgyNmRiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.SbYLYhWBUHNnzt1XqaNESNkb_WL-cC1xiwtWitvmlmU" alt="Project Screenshots" >
+<img url="https://private-user-images.githubusercontent.com/68477234/251393595-964c901e-e06f-4e26-a3fa-77dfd171ae54.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NjMyODIwLCJuYmYiOjE2ODg2MzI1MjAsInBhdGgiOiIvNjg0NzcyMzQvMjUxMzkzNTk1LTk2NGM5MDFlLWUwNmYtNGUyNi1hM2ZhLTc3ZGZkMTcxYWU1NC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNzA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDcwNlQwODM1MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jNmY4MmYwMjZjZTc5ODM4ZDczMTZkYzBkNzdiZjNmNjNiOTVmMDA4M2EyNTY1ODFjOWI0MmZjZjA3NzgyNmRiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.SbYLYhWBUHNnzt1XqaNESNkb_WL-cC1xiwtWitvmlmU" alt="Project Screenshots" >
 
-<img src="https://private-user-images.githubusercontent.com/68477234/251393667-56cda690-3d89-4cbb-8080-0f85b80d2ec7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NjMyODIwLCJuYmYiOjE2ODg2MzI1MjAsInBhdGgiOiIvNjg0NzcyMzQvMjUxMzkzNjY3LTU2Y2RhNjkwLTNkODktNGNiYi04MDgwLTBmODViODBkMmVjNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNzA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDcwNlQwODM1MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03N2Q2MWE5MjdiZDk4ODEzMGNkN2ZiMGRjYTU1MTU1MDdmODhiYWRlZGUwNTM1NDFiMTA1MTBlNjI3ZDQ3YmZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ZkwRAaDK2YR1taIlxEXh8TnXl4DzIwX5f5cJj4idx_Y" >
+<img url="https://private-user-images.githubusercontent.com/68477234/251393667-56cda690-3d89-4cbb-8080-0f85b80d2ec7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg4NjMyODIwLCJuYmYiOjE2ODg2MzI1MjAsInBhdGgiOiIvNjg0NzcyMzQvMjUxMzkzNjY3LTU2Y2RhNjkwLTNkODktNGNiYi04MDgwLTBmODViODBkMmVjNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNzA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDcwNlQwODM1MjBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03N2Q2MWE5MjdiZDk4ODEzMGNkN2ZiMGRjYTU1MTU1MDdmODhiYWRlZGUwNTM1NDFiMTA1MTBlNjI3ZDQ3YmZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ZkwRAaDK2YR1taIlxEXh8TnXl4DzIwX5f5cJj4idx_Y" >
 
 
 </p>
@@ -46,7 +47,7 @@ $ npm run dev
 
 <td>Jay Shah
 	<p align="center">
-		<img src = "https://avatars.githubusercontent.com/jaynikunjshah" width="150" height="150" alt="Jay">
+		<img src = "https://avatars.githubusercontent.com/jaynikunjshah" width="150" height="150" alt="Jay" style="borderRadius: "50%"">
 	</p>
 	<p align="center">
 		<a href = "https://github.com/jaynikunjshah"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/></a>
