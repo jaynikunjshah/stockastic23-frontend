@@ -45,18 +45,16 @@ function Home() {
                 Contact Us
               </a>
               <div className="xsnavadj:mr-[0.5rem] xsnavadj:mt-4">
-                <a href="#">
-                  <button className="px-4 py-2  transition duration-275 ease-in-out transform border-white text-[#0F0F0F] font-semibold rounded-full ml-4 bg-[#7353BA] cursor-default">
-                  {/* hover:bg-purple-300  hover:shadow-md inline hover:scale-125*/}
-                    REGISTRATIONS CLOSED
+                <a href="/signup">
+                  <button className="px-4 py-2  transition duration-275 ease-in-out transform hover:scale-125 border-white text-[#0F0F0F] font-semibold rounded-full ml-4 bg-[#7353BA] hover:bg-purple-300  hover:shadow-md inline">
+                    REGISTER
                   </button>
                 </a>
-                {/* <a href="/signin">
+                <a href="/signin">
                   <button className="px-4 py-2 border transition duration-275 ease-in-out transform hover:scale-125 border-white text-[#7C7C7C] font-semibold rounded-full ml-4  hover:shadow-md inline">
                     LOGIN
                   </button>
-                </a> */}
-              </div>
+                </a>              </div>
             </div>
           </div>
         </nav>
